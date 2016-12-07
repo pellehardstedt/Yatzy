@@ -95,3 +95,6 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# all.css (generates anyway for everyone)
+all.css
