@@ -32,7 +32,7 @@ m.classLoader();
 // console.log("All loaded classes", Object.keys(g.classes));
 
 // start LessWatch
-// new g.classes.LessWatch();
+new g.classes.LessWatch();
 
 // start express server
 new g.classes.Server();
