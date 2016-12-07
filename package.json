@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "*",
+    "bootstrap": "^3.3.7",
+    "compression": "*",
     "cookie-parser": "*",
     "debug": "*",
     "express": "*",
-    "compression": "*",
-    "serve-favicon": "*",
     "gulp": "*",
+    "gulp-clean-css": "*",
     "gulp-less": "*",
-    "gulp-clean-css": "*"
+    "serve-favicon": "*"
   }
 }
