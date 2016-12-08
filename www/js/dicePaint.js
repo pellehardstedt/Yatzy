@@ -1,5 +1,5 @@
 //Takes the number of the roll and a certain canvas space to print out the dice roll
-//OBS! If you wan't to test this give the function a roll from a dice (1-6) and the canvasID dice-1 in the console
+//OBS! If you wan't to test this give the function a roll from a dice (1-6) and the canvasID "dice-1" to "dice-5" in the console
 //To refresh the dice you need to reload the page
 function paintDiceRoll(roll, canvasID) {
 
