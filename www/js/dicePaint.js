@@ -1,6 +1,35 @@
+$(start());
+
+function start() {
+
+	//Define the size of the dices at start
+	reziseDices();
+
+	//Define a new size of the dices if you change the browser size
+	$(window).resize(reziseDices);
+
+	function reziseDices() {
+
+		if($(window).width() < 359) {
+			$('canvas.dices').attr({height: '40', width: '40'});
+		} else if($(window).width() < 461) {
+			$('canvas.dices').attr({height: '45', width: '45'});
+		} else if($(window).width() < 550) {
+			$('canvas.dices').attr({height: '55', width: '55'});
+		} else if($(window).width() < 661) {
+			$('canvas.dices').attr({height: '65', width: '65'});
+		}  else if($(window).width() < 768) {
+			$('canvas.dices').attr({height: '70', width: '70'});
+		} else {
+			$('canvas.dices').attr({height: '110', width: '110'});
+		}
+	}
+}
+
 //Takes the number of the roll and a certain canvas space to print out the dice roll
 //OBS! If you wan't to test this give the function a roll from a dice (1-6) and the canvasID "dice-1" to "dice-5" in the console
 //To refresh the dice you need to reload the page
+//Freddy
 function paintDiceRoll(roll, canvasID) {
 
 	var canvas = document.getElementById(canvasID);
