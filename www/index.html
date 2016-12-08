@@ -8,6 +8,7 @@
     <title>Yatzy</title>
 
     <link rel="stylesheet" href="/css/all.css">
+
   </head>
   <body>
 
@@ -22,15 +23,41 @@
           <div class="col-xs-12">
             <h1 class="game-logo text-center"> Yatzy </h1>
           </div>
-
+        
         </div>
 
+        <!-- Form for registering new players -->
         <div class="row">
           <div class="player-registration-wrapper">
-            <!-- ADD PLAYERS COMPONENT GOES HERE -->
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+              <div class="player-form">
+
+                <!-- header -->
+                <div class="row">
+                  <div class="col-xs-12">
+                    <h2 class="text-center">Spelare</h2>
+                  </div>
+                </div>
+
+                <!-- form area -->
+                <div class="row">
+                  <div class="col-xs-3">
+                    <p class="form-label text-right"><strong>Player 1</strong></p>
+                  </div>
+                  <div class="col-xs-6 center-block">
+                    <input type="text" class="form-control" id="playerNameInput1" placeholder="Player 1 name">
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Menu buttons -->
         <div class="row">
           <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
             
@@ -44,9 +71,11 @@
           <div class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-4">
             <button id="highscore-button" data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block"> Highscore </button>
           </div>
+
           <div class="col-xs-4 col-sm-3 col-md-2">
             <button class="btn btn-default btn-block"> Regler </button>
           </div>
+
           <div class="vertical-spacer-m"></div>
         </div>
 
