@@ -1,21 +1,21 @@
 //declaring placeholder player objects
 var playerObject1 = {
-  name: "per",
+  name: "Per",
   score: 10,
 };
 
 var playerObject2 = {
-  name: "klas",
+  name: "Maja",
   score: 12,
 };
 
 var playerObject3 = {
-  name: "erik",
+  name: "Moroten",
   score: 5,
 };
 
 var playerObject4 = {
-  name: "edvin",
+  name: "Jägaren",
   score: 120,
 };
 
@@ -23,17 +23,29 @@ var playerObject4 = {
 var result = [playerObject1, playerObject2, playerObject3, playerObject4];
 
 //da real sorting being done
-result.sort(function (b, a) {
-  if (a.score > b.score) {
-    return 1;
-  }
-  if (a.score < b.score) {
-    return -1;
-  }
-  return 0;
-});
 
-//looping thru the sorted array, logging name and score of each player.
-result.forEach(function(player){
-    console.log(player.name + " " + player.score);
+function highscoreList(resultArray){
+  resultArray.sort(function (b, a) {
+    if (a.score > b.score) {
+      return 1;
+    }
+    if (a.score < b.score) {
+      return -1;
+    }
+    return 0;
+  });
+
+  // //looping thru the sorted array, logging name and score of each player.
+  // result.forEach(function(player){
+  //     console.log(player.name + " " + player.score);
+  // });
+
+}
+
+//event listener on button click
+$('body').on('click', '#highscore-button', function(){
+  highscoreList(result);
+  result.forEach(function(player){
+    $('.modal-body-highscore tbody').append('<tr><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
+  });
 });
