@@ -23,7 +23,6 @@ var playerObject4 = {
 var result = [playerObject1, playerObject2, playerObject3, playerObject4];
 
 //da real sorting being done
-
 function highscoreList(resultArray){
   resultArray.sort(function (b, a) {
     if (a.score > b.score) {
@@ -34,18 +33,12 @@ function highscoreList(resultArray){
     }
     return 0;
   });
-
-  // //looping thru the sorted array, logging name and score of each player.
-  // result.forEach(function(player){
-  //     console.log(player.name + " " + player.score);
-  // });
-
 }
 
 //event listener on button click
 $('body').on('click', '#highscore-button', function(){
   highscoreList(result);
-  result.forEach(function(player){
-    $('.modal-body-highscore tbody').append('<tr><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
+  result.forEach(function(player, i){
+    $('.modal-body-highscore tbody').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
   });
 });
