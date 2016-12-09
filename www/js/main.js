@@ -17,6 +17,8 @@ $(function(){
 		removePlayer(me);
 	});
 
+	//event listener for the "Spela!" button. 
+	//calls startNewGame from init-game.js
 	$('.start-menu-wrapper').on('click', '#startGame', function(){
 		startNewGame();
 	});
