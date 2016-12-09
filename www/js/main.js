@@ -18,6 +18,6 @@ $(function(){
 	});
 
 	$('.start-menu-wrapper').on('click', '#startGame', function(){
-		alert("spela");
+		startNewGame();
 	});
 });
