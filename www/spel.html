@@ -15,7 +15,7 @@
             <h2>Yatzy</h2>
           </div>
           <div class="col-xs-4 col-sm-2">
-            <button class="btn btn-default menu-button">Meny</button>
+            <button class="btn btn-default menu-button" data-toggle="modal" data-target="#inGameMeny">Meny</button>
           </div>
         </div>
       </div>
@@ -36,6 +36,47 @@
 
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="inGameMeny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Meny</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                <button class="btn btn-primary btn-block btn-lg center-block">Regler</button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                <button class="btn btn-primary btn-block btn-lg center-block">Instruktioner</button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                <button class="btn btn-primary btn-block btn-lg center-block">Avsluta spel</button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type
+            ="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
         <!-- Screen size display just for development purposes. -->
     <div class="screensize-reporter">
       <div class="container-fluid">

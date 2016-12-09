@@ -37,9 +37,8 @@ function highscoreList(resultArray){
 
 //event listener on highscore-button
 $('body').on('click', '#highscore-button', function(){
-  //remove previous
-  $('.modal-tbody-highscore').empty();
-  //call sort function, sorting the array 'result'
+  //clear modal so that list dont duplicates when closing and opening.
+  $('.modal-body-highscore tbody').empty();
   highscoreList(result);
   //for each element in 'result'
   result.forEach(function(player, i){
