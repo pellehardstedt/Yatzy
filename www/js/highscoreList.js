@@ -35,10 +35,14 @@ function highscoreList(resultArray){
   });
 }
 
-//event listener on button click
+//event listener on highscore-button
 $('body').on('click', '#highscore-button', function(){
+  //remove previous
+  $('.modal-tbody-highscore').empty();
+  //call sort function, sorting the array 'result'
   highscoreList(result);
+  //for each element in 'result'
   result.forEach(function(player, i){
-    $('.modal-body-highscore tbody').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
+    $('.modal-tbody-highscore').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
   });
 });
