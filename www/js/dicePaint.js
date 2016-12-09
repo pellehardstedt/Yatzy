@@ -38,6 +38,8 @@ function paintDiceRoll(roll, canvasID) {
 	var cW = canvas.width;
 	var cH = canvas.height;
 
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 	switch(roll) {
 		case 1:
 			paintOne();

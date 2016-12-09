@@ -25,15 +25,22 @@
 
     <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
-
-        <!--SPACE FOR DICES -->
-        <!--This canvas is a placeholder for testing dicePaint.js-->
-        <canvas class="dices" id="dice-1"></canvas>
-        <canvas class="dices" id="dice-2"></canvas>
-        <canvas class="dices" id="dice-3"></canvas>
-        <canvas class="dices" id="dice-4"></canvas>
-        <canvas class="dices" id="dice-5"></canvas>
-
+        <div class="row">
+          <div class="dice-area">
+            <!--SPACE FOR DICES -->
+            <!--This canvas is a placeholder for testing dicePaint.js-->
+            <div class="col-xs-11">
+              <canvas class="dices" id="dice-1"></canvas>
+              <canvas class="dices" id="dice-2"></canvas>
+              <canvas class="dices" id="dice-3"></canvas>
+              <canvas class="dices" id="dice-4"></canvas>
+              <canvas class="dices" id="dice-5"></canvas>
+            </div>
+            <div class="col-xs-1">
+              <button class="btn btn-default roll">Roll</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
         <!-- Screen size display just for development purposes. -->
@@ -50,5 +57,6 @@
     <script src="js/main.js"></script>
     <script src="js/highscoreList.js"></script>
     <script src="js/dicePaint.js"></script>
+    <script src="js/diceRoll.js"></script>
   </body>
 </html>
