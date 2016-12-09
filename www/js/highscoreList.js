@@ -37,6 +37,10 @@ function highscoreList(resultArray){
 
 //event listener on button click
 $('body').on('click', '#highscore-button', function(){
+  
+  //clear modal so that list dont duplicates when closing and opening.
+  $('.modal-body-highscore tbody').empty();
+
   highscoreList(result);
   result.forEach(function(player, i){
     $('.modal-body-highscore tbody').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
