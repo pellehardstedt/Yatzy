@@ -16,4 +16,8 @@ $(function(){
 		var me = $(this);
 		removePlayer(me);
 	});
+
+	$('.start-menu-wrapper').on('click', '#startGame', function(){
+		alert("spela");
+	});
 });

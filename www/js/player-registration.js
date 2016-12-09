@@ -1,10 +1,12 @@
-// One or more globals
+//Created 2016-12-09 by Victor Glimskog
+//This file contains code for handling player registration form manipulation.
+//adding and removing rows and the functionality around this. 
+
+// Globals
 var addNewPlayer;
 var removePlayer;
 
-// An anonymous self-executing function
-// all variables and functions declared within
-// are in a local scope
+//Self executing function
 (function(){
 	var playerCount;
 
