@@ -1,6 +1,6 @@
-$(start());
+$(startDicePaint());
 
-function start() {
+function startDicePaint() {
 
 	//Define the size of the dices at start
 	reziseDices();

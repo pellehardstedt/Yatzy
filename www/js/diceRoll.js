@@ -1,26 +1,34 @@
 //This array contains the rolls that where made this turn with dice-1 on index 0, dice-2 on index 1 etc...
 var theDiceRolls = [];
 
-//The roll the player is at (1-3)
-var rollNumber = 0;
+//How manny rolls the player has left (3-0)
+var rollNumber = 3;
 
-$('.dice-area').on('click', 'button.roll', function() {
+$(startDiceRoll())
 
-	if(rollNumber < 3) {
-		rollAllDices();
-		rollNumber++;
-	}
+function startDiceRoll() {
 
-});
+	$('.dice-area .roll-number').text(rollNumber);
 
-//Locks the dice you click (adds class 'locked')
-$('.dice-area').on('click', '.dices', function() {
+	$('.dice-area').on('click', 'button.roll', function() {
 
-	if(rollNumber > 0 && rollNumber < 3) {
-		$(this).toggleClass('locked');
-	}
+		if(rollNumber > 0) {
+			rollAllDices();
+			rollNumber--;
+		}
+		$('.dice-area .roll-number').text(rollNumber);
 
-});
+	});
+
+	//Locks the dice you click (adds class 'locked')
+	$('.dice-area').on('click', '.dices', function() {
+
+		if(rollNumber > 0 && rollNumber < 3) {
+			$(this).toggleClass('locked');
+		}
+
+	});
+}
 
 function rollAllDices() {
 
