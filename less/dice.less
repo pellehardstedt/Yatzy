@@ -1,13 +1,30 @@
 //Dice css
-canvas.dices {
-	background-color: white;
-	border: 2px solid black;
-	border-radius: 5px;
-	@media(min-width: @screen-sm-min) {
-		border-width: 3px;
-		border-radius: 7px;
-		margin: 3px;
+.dice-area {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: gray;
+	canvas.dices {
+		margin: 20px 0;
+		background-color: white;
+		border: 2px solid black;
+		border-radius: 5px;
+		cursor: pointer;
+		@media(min-width: @screen-sm-min) {
+			border-width: 3px;
+			border-radius: 7px;
+			margin: 10px 3px;
+		}
+		&.locked {
+			border-color: red;
+		}
 	}
-}
-button.roll {
+	button.roll {
+		width: 100%;
+	}
+	h4.roll-number {
+		margin: 10px 0;
+		text-align: center;
+	}
 }

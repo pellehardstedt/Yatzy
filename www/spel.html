@@ -23,26 +23,23 @@
 
     <!--SPACE FOR SCOREBOARD -->
 
-    <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="dice-area">
       <div class="container-fluid">
         <div class="row">
-          <div class="dice-area">
-            <!--SPACE FOR DICES -->
-            <!--This canvas is a placeholder for testing dicePaint.js-->
-            <div class="col-xs-11">
-              <canvas class="dices" id="dice-1"></canvas>
-              <canvas class="dices" id="dice-2"></canvas>
-              <canvas class="dices" id="dice-3"></canvas>
-              <canvas class="dices" id="dice-4"></canvas>
-              <canvas class="dices" id="dice-5"></canvas>
-            </div>
-            <div class="col-xs-1">
-              <button class="btn btn-default roll">Roll</button>
+          <div class="col-xs-9 col-sm-10">
+            <canvas class="dices" id="dice-1"></canvas>
+            <canvas class="dices" id="dice-2"></canvas>
+            <canvas class="dices" id="dice-3"></canvas>
+            <canvas class="dices" id="dice-4"></canvas>
+            <canvas class="dices" id="dice-5"></canvas>
+          </div>
+            <div class="col-xs-3 col-sm-2">
+              <h4 class="roll-number">1</h4>
+              <button class="btn btn-default roll center-block">Roll</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="inGameMeny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

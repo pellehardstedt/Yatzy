@@ -10,18 +10,16 @@ function start() {
 
 	function reziseDices() {
 
-		if($(window).width() < 359) {
-			$('canvas.dices').attr({height: '40', width: '40'});
+		if($(window).width() < 389) {
+			$('canvas.dices').attr({height: '34', width: '34'});
 		} else if($(window).width() < 461) {
 			$('canvas.dices').attr({height: '45', width: '45'});
 		} else if($(window).width() < 550) {
 			$('canvas.dices').attr({height: '55', width: '55'});
-		} else if($(window).width() < 661) {
-			$('canvas.dices').attr({height: '65', width: '65'});
-		}  else if($(window).width() < 768) {
+		}  else if($(window).width() < 780) {
 			$('canvas.dices').attr({height: '70', width: '70'});
 		} else {
-			$('canvas.dices').attr({height: '110', width: '110'});
+			$('canvas.dices').attr({height: '105', width: '105'});
 		}
 	}
 }
