@@ -11,9 +11,16 @@ function startDiceRoll() {
 	$('.dice-area .roll-number').text(rollNumber);
 
 	$('.dice-area').on('click', 'button.roll', function() {
-		if(rollNumber > 0) {
+		if(rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
+		} else if (rollNumber === 1) {
+			rollAllDices();
+			rollNumber--;
+
+			setTimeout(function(){
+				$('.dice-area').find('.dices').removeClass('locked');
+			}, 1400);
 		}
 		$('.dice-area .roll-number').text(rollNumber);
 	});
@@ -26,10 +33,13 @@ function startDiceRoll() {
 	});
 
 	function rollAllDices() {
+
 		for(var i = 0; i < 5; i++) {
+
 			if($('.dice-area').find('#dice-' + (i + 1)).hasClass('locked')) {
 				continue;
 			}
+
 			rollDiceIllusion("dice-" + (i + 1));
 			var activeDiceRoll = oneDiceRoll();
 			theDiceRolls[i] = activeDiceRoll;
@@ -41,6 +51,7 @@ function startDiceRoll() {
 			return randomNumber;
 		}
 
+		//Roll dice illusion with timer (the last rolls are slower then the first ones)
 		function rollDiceIllusion(dice) {
 			var activeTimesToRoll = timesToRoll();
 
@@ -53,6 +64,8 @@ function startDiceRoll() {
 		}
 
 		function timesToRoll() {
+
+			//This is time in ms (a number between 700-1400 ms)
 			var randomNumber = Math.floor((Math.random() * 700) + 700);
 			return randomNumber;
 		}
