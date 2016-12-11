@@ -13,9 +13,13 @@ function startDiceRoll() {
 	$('.dice-area').on('click', 'button.roll', function() {
 
 		if(rollNumber > 0) {
+
 			rollAllDices();
+
 			rollNumber--;
+
 		}
+
 		$('.dice-area .roll-number').text(rollNumber);
 
 	});
@@ -28,28 +32,31 @@ function startDiceRoll() {
 		}
 
 	});
-}
 
-function rollAllDices() {
+	function rollAllDices() {
 
-	for(var i = 0; i < 5; i++) {
+		for(var i = 0; i < 5; i++) {
 
-		if($('.dice-area').find('#dice-' + (i + 1)).hasClass('locked')) {
-			continue;
+			if($('.dice-area').find('#dice-' + (i + 1)).hasClass('locked')) {
+
+				continue;
+
+			}
+
+			var activeDiceRoll = oneDiceRoll();
+
+			theDiceRolls[i] = activeDiceRoll;
+
+			paintDiceRoll(activeDiceRoll, "dice-" + (i + 1));
+
 		}
 
-		var activeDiceRoll = oneDiceRoll();
+		function oneDiceRoll() {
 
-		theDiceRolls[i] = activeDiceRoll;
+			var randomNumber = Math.floor((Math.random() * 6) + 1);
 
-		paintDiceRoll(activeDiceRoll, "dice-" + (i + 1));
+			return randomNumber;
+
+		}
 	}
-
-}
-
-function oneDiceRoll() {
-
-	var randomNumber = Math.floor((Math.random() * 6) + 1);
-
-	return randomNumber;
 }
