@@ -18,7 +18,6 @@ var players = [],
 
 		//Assign first player to activePlayer variable
 		activePlayer = players[0];
-
 	}
 
 	// This functions gets playernames from input forms on startmenu and creates player objects. 
