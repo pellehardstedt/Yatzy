@@ -1,3 +1,18 @@
+function sanityCheck(dice) {
+	var results = [];
+	results = acesToSixes(dice);
+	results.push(onePair(dice));
+	results.push(twoPairs(dice));
+	results.push(threeOfAKind(dice));
+	results.push(fourOfAKind(dice));
+	results.push(smallStraight(dice));
+	results.push(largeStraight(dice));
+	results.push(fullHouse(dice));
+	results.push(chance(dice));
+	results.push(yatzy(dice));
+	console.log(results);
+}
+
 function sumOf(dice, face) {
 	var sum = 0;
 	for (var i = 0; i < 5; i++) {
@@ -22,7 +37,7 @@ function nbrOf(dice, face) {
 function acesToSixes(dice) {
 	var upper = [];
 	for (var i = 0; i < 6; i++) {
-		upper.push(sumOf(dice, i));
+		upper.push(sumOf(dice, i+1));
 	}
 	return upper;
 }
