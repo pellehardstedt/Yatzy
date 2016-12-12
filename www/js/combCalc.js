@@ -37,7 +37,7 @@ function nbrOf(dice, face) {
 function acesToSixes(dice) {
 	var upper = [];
 	for (var i = 0; i < 6; i++) {
-		upper.push(sumOf(dice, i));
+		upper.push(sumOf(dice, i+1));
 	}
 	return upper;
 }
