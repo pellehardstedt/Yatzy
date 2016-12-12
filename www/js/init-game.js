@@ -10,18 +10,35 @@ var players = [];
 // Self executing function 
 (function(){
 
+	// This function is the controller function for starting a new game
 	function startNewGameFunc(){
-		assignPlayerNamesToNumbers();
+		players = buildPlayerObjects();
 	}
 
-	function assignPlayerNamesToNumbers(){
+	// This functions gets playernames from input forms on startmenu and creates player objects. 
+	function buildPlayerObjects(){
+		var returnArr = [],
+			notRegisteredStr = "Skriv in: ";
+
 		$('.player').each(function( i ){
 			var playerName = $(this).find('input').val();
-			players[i] = {
+
+			if(playerName === ''){
+				var label = $(this).find('input').attr('placeholder');
+				notRegisteredStr += (label + ', ');
+			}
+			returnArr[i] = {
 				playerNo: (i+1),
 				name: playerName
 			};
 		});
+
+		if(notRegisteredStr.length > 10){
+			alert(notRegisteredStr);
+		}
+		else{
+			return returnArr;
+		}
 	}
 
 	startNewGame = startNewGameFunc;
