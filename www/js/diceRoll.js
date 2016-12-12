@@ -53,13 +53,13 @@ function startDiceRoll() {
 
 		//Roll dice illusion with timer (the last rolls are slower then the first ones)
 		function rollDiceIllusion(dice,index) {
-			var activeTimesToRoll = timesToRoll(), first = true;
+			var activeTimesToRoll = timesToRoll();
+			var first = true;
 
 			while(activeTimesToRoll > 100) {
-				(function(){
+				(function() {
 					var random = !first;
 					setTimeout(function(){
-						console.log(random);
 						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[index], dice);
 					}, activeTimesToRoll);
 					activeTimesToRoll -= 100;
