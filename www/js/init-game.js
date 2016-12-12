@@ -5,14 +5,20 @@
 var startNewGame;
 
 // Global vars
-var players = [];
+var players = [],
+	activePlayer;
 
 // Self executing function 
 (function(){
 
 	// This function is the controller function for starting a new game
 	function startNewGameFunc(){
+		//Create the player objects
 		players = buildPlayerObjects();
+
+		//Assign first player to activePlayer variable
+		activePlayer = players[0];
+
 	}
 
 	// This functions gets playernames from input forms on startmenu and creates player objects. 
