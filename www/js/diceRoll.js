@@ -40,10 +40,10 @@ function startDiceRoll() {
 				continue;
 			}
 
-			rollDiceIllusion("dice-" + (i + 1));
+			rollDiceIllusion("dice-" + (i + 1),i);
 			var activeDiceRoll = oneDiceRoll();
 			theDiceRolls[i] = activeDiceRoll;
-			paintDiceRoll(activeDiceRoll, "dice-" + (i + 1));
+			//paintDiceRoll(activeDiceRoll, "dice-" + (i + 1));
 		}
 
 		function oneDiceRoll() {
@@ -52,14 +52,19 @@ function startDiceRoll() {
 		}
 
 		//Roll dice illusion with timer (the last rolls are slower then the first ones)
-		function rollDiceIllusion(dice) {
-			var activeTimesToRoll = timesToRoll();
+		function rollDiceIllusion(dice,index) {
+			var activeTimesToRoll = timesToRoll(), first = true;
 
 			while(activeTimesToRoll > 100) {
-				setTimeout(function(){
-					paintDiceRoll(oneDiceRoll(), dice);
-				}, activeTimesToRoll);
-				activeTimesToRoll -= 100;
+				(function(){
+					var random = !first;
+					setTimeout(function(){
+						console.log(random);
+						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[index], dice);
+					}, activeTimesToRoll);
+					activeTimesToRoll -= 100;
+					first = false;
+			  })();
 			}
 		}
 
