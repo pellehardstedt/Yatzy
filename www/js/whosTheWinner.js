@@ -3,8 +3,8 @@ players.push(playerObject2);
 players.push(playerObject3);
 players.push(playerObject4);
 
-function winner (arrayOfObjects){
-    arrayOfObjects.sort(function (b, a) {
+function winner(){
+    players.sort(function (b, a) {
         if (a.score > b.score) {
           return 1;
         }
@@ -13,8 +13,9 @@ function winner (arrayOfObjects){
         }
         return 0;
     });
+    
     //vinnaren är det första objektet i arrayen
-    console.log(arrayOfObjects[0].name);
+    console.log(players[0].name);
     //splash funktionen kallas, ej definierad ännu
-    return splashFunction(arrayOfObjects[0].name);
+    //return splashFunction(players[0].name);
 }
