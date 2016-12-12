@@ -18,6 +18,10 @@ var players = [],
 
 		//Assign first player to activePlayer variable
 		activePlayer = players[0];
+
+		//Hide start-menu-wrapper and show game-mode-wrapper
+		$('.start-menu-wrapper').hide();
+		$('.game-screen-wrapper').show();
 	}
 
 	// This functions gets playernames from input forms on startmenu and creates player objects. 

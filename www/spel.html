@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/all.css">
   </head>
   <body>
+
+    <!-- GAME SCREEN HEADER -->
     <header class="temp-header">
       <div class="container-fluid">
         <div class="row">
@@ -23,7 +25,7 @@
       </div>
     </header>
 
-    <!--SPACE FOR SCOREBOARD -->
+    <!-- SCOREBOARD -->
     <div class="container-fluid">
       <div class="row">
           <div class="col-xs-12">
@@ -95,6 +97,8 @@
           </div>        
       </div>
     </div>
+
+    <!-- DICE AREA -->
     <div class="dice-area">
       <div class="container-fluid">
         <div class="row">
@@ -105,15 +109,15 @@
             <canvas class="dices" id="dice-4"></canvas>
             <canvas class="dices" id="dice-5"></canvas>
           </div>
-            <div class="col-xs-3 col-sm-2">
-              <h4 class="roll-number"></h4>
-              <button class="btn btn-default roll center-block">Roll</button>
-            </div>
+          <div class="col-xs-3 col-sm-2">
+            <h4 class="roll-number"></h4>
+            <button class="btn btn-default roll center-block">Roll</button>
           </div>
         </div>
       </div>
+    </div>
 
-    <!-- Modal -->
+    <!-- GAME MENU MODAL -->
     <div class="modal fade" id="inGameMeny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -152,7 +156,7 @@
       </div>
     </div>
 
-        <!-- Screen size display just for development purposes. -->
+    <!-- Screen size display just for development purposes. -->
     <div class="screensize-reporter">
       <div class="container-fluid">
         <div class="visible-xs">Screen size: xs</div>
@@ -161,6 +165,7 @@
         <div class="visible-lg">Screen size: lg</div>
       </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
