@@ -22,6 +22,7 @@ function startDiceRoll() {
 				$('.dice-area').find('.dices').removeClass('locked');
 			}, 1400);
 		}
+		sanityCheck(theDiceRolls);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
@@ -51,7 +52,7 @@ function startDiceRoll() {
 		}
 
 		//Roll dice illusion with timer (the last rolls are slower then the first ones)
-		function rollDiceIllusion(dice,index) {
+		function rollDiceIllusion(diceID,diceIndex) {
 			var activeTimesToRoll = timesToRoll();
 			var first = true;
 
@@ -59,7 +60,7 @@ function startDiceRoll() {
 				(function() {
 					var random = !first;
 					setTimeout(function(){
-						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[index], dice);
+						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[diceIndex], diceID);
 					}, activeTimesToRoll);
 					activeTimesToRoll -= 100;
 					first = false;
