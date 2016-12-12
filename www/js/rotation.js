@@ -3,7 +3,8 @@ $(preventLandscape);
 
 function preventLandscape(){
     var isLandscape = $(window).height() < $(window).width();
-    if(isLandscape){
+    var isMobile = $(window).width() <= 760;
+    if(isLandscape && isMobile){
         $('body > *').hide();
         $('body').append('<p class="rotate-mess">Rotera tillbaka, please!</p>');
     }
@@ -11,5 +12,6 @@ function preventLandscape(){
         $('body > *').show();
         $('.rotate-mess').remove();
     }
+
     //$('body').attr('style', 'margin-top:50%;transform: rotate(' + degrees + 'deg)');
 }
