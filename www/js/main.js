@@ -22,4 +22,11 @@ $(function(){
 	$('.start-menu-wrapper').on('click', '#startGame', function(){
 		startNewGame();
 	});
+
+	//event listener for change on player form text-fields
+	//removes error message from front-page when user changes something.
+	$('.player-form').on('change', 'input', function(){
+		var message = $('.message-area').find('p');
+		message.text('');
+	});
 });

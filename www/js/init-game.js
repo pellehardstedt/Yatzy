@@ -17,15 +17,15 @@ var players = [];
 
 	// This functions gets playernames from input forms on startmenu and creates player objects. 
 	function buildPlayerObjects(){
-		var returnArr = [],
-			notRegisteredStr = "Skriv in: ";
+		var returnArr = [];
+			notRegistered = [];
 
 		$('.player').each(function( i ){
 			var playerName = $(this).find('input').val();
 
 			if(playerName === ''){
 				var label = $(this).find('input').attr('placeholder');
-				notRegisteredStr += (label + ', ');
+				notRegistered.push(label);
 			}
 			returnArr[i] = {
 				playerNo: (i+1),
@@ -33,8 +33,10 @@ var players = [];
 			};
 		});
 
-		if(notRegisteredStr.length > 10){
-			alert(notRegisteredStr);
+		//If something has been added to the notRegisteredString, someone has not written their name
+		//log an error message to tell the players to complete the form. 
+		if(notRegistered.length > 0){
+			$('.message-area').find('p').text('Skriv in namn på samtliga spelare!');
 		}
 		else{
 			return returnArr;
