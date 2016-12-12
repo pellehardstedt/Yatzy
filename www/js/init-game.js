@@ -29,7 +29,8 @@ var players = [];
 			}
 			returnArr[i] = {
 				playerNo: (i+1),
-				name: playerName
+				name: playerName,
+				score: 0
 			};
 		});
 
