@@ -5,7 +5,8 @@
 
 
 // Global vars
-var nextPlayer;
+var nextPlayer,
+	endGame;
 
 // Self executing function 
 (function(){
@@ -23,5 +24,17 @@ var nextPlayer;
 		}
 	}
 
+	function endGameFunc(){
+
+		$('.player-form').find('input').each(function(){
+			console.log($(this).val(''));
+		});
+
+		$('#inGameMeny .close' ).trigger( "click" );
+		$('.start-menu-wrapper').show();
+		$('.game-screen-wrapper').hide();
+	}
+
 	nextPlayer = nextPlayerFunc;
+	endGame = endGameFunc;
 })();

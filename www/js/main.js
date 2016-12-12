@@ -1,6 +1,6 @@
 //wait for document ready
 $(function(){
-
+	
 	//EVENT LISTENERS
 
 	//event listener for the add new player button on start menu player form. 
@@ -28,5 +28,9 @@ $(function(){
 	$('.player-form').on('change', 'input', function(){
 		var message = $('.message-area').find('p');
 		message.text('');
+	});
+
+	$('#inGameMeny').on('click', '.end-game', function(){
+		endGame();
 	});
 });
