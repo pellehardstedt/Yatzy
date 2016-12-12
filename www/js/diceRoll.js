@@ -43,7 +43,6 @@ function startDiceRoll() {
 			rollDiceIllusion("dice-" + (i + 1),i);
 			var activeDiceRoll = oneDiceRoll();
 			theDiceRolls[i] = activeDiceRoll;
-			//paintDiceRoll(activeDiceRoll, "dice-" + (i + 1));
 		}
 
 		function oneDiceRoll() {
