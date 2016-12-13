@@ -14,8 +14,6 @@ function winner(){
         return 0;
     });
     
-    //vinnaren är det första objektet i arrayen
-    console.log(players[0].name);
-    //splash funktionen kallas, ej definierad ännu
-    //return splashFunction(players[0].name);
+
+    return players[0].name;
 }
