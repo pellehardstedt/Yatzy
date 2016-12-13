@@ -6,8 +6,12 @@
 $(writeTable());
 
 function writeTable() {
+    $('.score-table thead tr').empty();
+    $('.score-table thead tr').append('<th></th>');
+    $('.write-rewrite-table').remove();
+
 	for(var i = 0; i < players.length; i++) {
 		$('.score-table thead tr').append('<th class='+ i +'>'+ players[i].name+'</th>');
-		$('.score-table tbody').find('tr').append('<td></td>');
+		$('.score-table tbody').find('tr').append('<td class="write-rewrite-table"></td>');
 	}
 }

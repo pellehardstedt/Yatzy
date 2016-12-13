@@ -19,17 +19,19 @@ function startDiceRoll() {
 			rollNumber--;
 
 			setTimeout(function(){
-				$('.dice-area').find('.dices').removeClass('locked');
+				$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
+				$('.dice-area').find('.locked').toggleClass('unlocked locked');
 			}, 1400);
 		}
 		sanityCheck(theDiceRolls);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
-	//Locks the dice you click (adds class 'locked')
-	$('.dice-area').on('click', '.dices', function() {
+	//Locks the dice when you click the lock
+		$('.dice-area').on('click', '.canvas-lock-area', function() {
 		if(rollNumber > 0 && rollNumber < 3) {
-			$(this).toggleClass('locked');
+			$(this).find('i').toggleClass('fa-unlock-alt fa-lock');
+			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
 		}
 	});
 
@@ -37,7 +39,7 @@ function startDiceRoll() {
 
 		for(var i = 0; i < 5; i++) {
 
-			if($('.dice-area').find('#dice-' + (i + 1)).hasClass('locked')) {
+			if($('.dice-area #dice-' + (i + 1)).siblings().find('i').hasClass('fa-lock')) {
 				continue;
 			}
 
