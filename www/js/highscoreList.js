@@ -1,27 +1,27 @@
 //declaring placeholder player objects
-var playerObject1 = {
-  playerNo: 1,
-  name: "Per",
-  score: 10,
-};
+// var playerObject1 = {
+//   playerNo: 1,
+//   name: "Per",
+//   score: 10,
+// };
 
-var playerObject2 = {
-  playerNo: 2,
-  name: "Maja",
-  score: 12,
-};
+// var playerObject2 = {
+//   playerNo: 2,
+//   name: "Maja",
+//   score: 12,
+// };
 
-var playerObject3 = {
-  playerNo: 3,
-  name: "Moroten",
-  score: 5,
-};
+// var playerObject3 = {
+//   playerNo: 3,
+//   name: "Moroten",
+//   score: 5,
+// };
 
-var playerObject4 = {
-  playerNo: 4,
-  name: "Jägaren",
-  score: 120,
-};
+// var playerObject4 = {
+//   playerNo: 4,
+//   name: "Jägaren",
+//   score: 120,
+// };
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
 // var result = [playerObject1, playerObject2, playerObject3, playerObject4];
