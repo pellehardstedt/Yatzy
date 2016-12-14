@@ -279,14 +279,18 @@
     </div>
 
     <!-- SCORESCREEN -->
-    <div class="scoreScreen">
-      <div class="container">
-        <h2>You won!</h2>
-        <p><a class="btn btn-primary btn-lg restartButton" href="index.html" role="button">Restart</a></p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Highscore</a></p>
-        <p><a class="btn btn-primary btn-lg main-menu" href="#" role="button">Main menu</a></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="scoreScreen">
+            <br>
+            <p><a class="btn btn-success btn-lg restartButton" href="index.html" role="button">Restart</a></p>
+            <button id="highscore-button-2" data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block"> Highscore </button>
+          </div> 
+        </div>
       </div>
-    </div>
+    </div>  
+          
 
     <!-- DEV TOOLS -->
     <!-- Screen size display just for development purposes. -->
