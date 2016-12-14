@@ -13,4 +13,4 @@ function highlightNext(nextPlayer){
         //go back to the first one and add the class to the player class .0
         $('.score-table thead tr .0').addClass('highlight');
     }
-    }
+}
