@@ -41,7 +41,7 @@ function highscoreList(resultArray){
 }
 
 //event listener on highscore-button
-$('body').on('click', '#highscore-button', function(){
+$('body').on('click', '.highscore-button', function(){
   //clear modal so that list dont duplicates when closing and opening.
   $('.modal-body-highscore tbody').empty();
   highscoreList(players);
