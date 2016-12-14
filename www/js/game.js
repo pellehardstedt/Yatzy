@@ -10,10 +10,16 @@ var nextPlayer,
 // Self executing function 
 (function(){
 
+	//Updates what the current dices would score in each respective category
+	//and shows this on the scorecard. 
+	function updateCategoryScorePreview(){
+
+	}
+
 	//Sets the next player in the players array to active player. 
 	//It loops around to first player if activePlayer is the last in array. 
 	function nextPlayerFunc(){
-		var nextPlayerIndex = (activePlayer.playerNo);
+		var nextPlayerIndex = (activePlayer.playerNo + 1);
 
 		highlightNext(nextPlayerIndex);
 
@@ -23,7 +29,7 @@ var nextPlayer,
 		else{
 			activePlayer = players[0];
 		}
-		}
+	}
 
 	function endGameFunc(){
 
