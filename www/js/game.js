@@ -5,6 +5,7 @@
 
 // Global vars
 var nextPlayer,
+	round = 0,
 	endGame;
 
 // Self executing function 
@@ -22,8 +23,9 @@ var nextPlayer,
 		}
 		else{
 			activePlayer = players[0];
+			roundCounter(round);
 		}
-		}
+	}
 
 	function endGameFunc(){
 
@@ -34,6 +36,20 @@ var nextPlayer,
 		$('#inGameMeny .close' ).trigger( "click" );
 		$('.start-menu-wrapper').show();
 		$('.game-screen-wrapper').hide();
+		$('.scoreScreen').fadeOut(1000);
+
+
+		round=0;
+	}
+
+	function roundCounter(){
+		round++;
+
+		if (round==12) {
+			winnerScreen();
+		}
+
+
 	}
 
 	nextPlayer = nextPlayerFunc;

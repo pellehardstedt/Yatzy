@@ -31,7 +31,7 @@ $(function(){
 		message.text('');
 	});
 
-	$('#inGameMeny').on('click', '.end-game', function(){
+	$('body').on('click', '.end-game', function(){
 		endGame();
 	});
 });
