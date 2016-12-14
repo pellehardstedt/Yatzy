@@ -48,7 +48,19 @@ var players = [],
 		if(notRegistered.length > 0){
 			$('.message-area').find('p').text('Skriv in namn på samtliga spelare!');
 		}
-		else{
+		/*else{
+
+			returnArr.forEach(function () {
+				console.log($(this));
+
+				returnArr.forEach(function () {
+					if($(this).name === activePlayer.name && $(this).playerNo != activePlayer.playerNo) {
+						$(this).name = $(this).name + 'I';
+					}
+				});
+
+			}*/
+
 			return returnArr;
 		}
 	}
