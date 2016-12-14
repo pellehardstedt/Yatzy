@@ -64,8 +64,7 @@ var players = [],
 
 			}*/
 
-			return returnArr;
-		}
+		return returnArr;
 	}
 
 	startNewGame = startNewGameFunc;
