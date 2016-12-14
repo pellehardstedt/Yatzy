@@ -15,15 +15,14 @@ var nextPlayer,
 	function nextPlayerFunc(){
 		var nextPlayerIndex = (activePlayer.playerNo);
 
-		$('.score-table thead tr th').removeClass('highlight');
+		highlightNext(nextPlayerIndex);
+
 		if(players[nextPlayerIndex]){
 			activePlayer = players[nextPlayerIndex];
 		}
 		else{
 			activePlayer = players[0];
-			$('.score-table thead tr .0').addClass('highlight');
 		}
-		$('.score-table thead tr .' + nextPlayerIndex).addClass('highlight');
 		}
 
 	function endGameFunc(){
