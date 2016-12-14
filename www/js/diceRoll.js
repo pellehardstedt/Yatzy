@@ -8,12 +8,15 @@ $(startDiceRoll())
 
 function startDiceRoll() {
 
+	$('.dice-area').find('.lock-wrapper').hide();
+
 	$('.dice-area .roll-number').text(rollNumber);
 
 	$('.dice-area').on('click', 'button.roll', function() {
 		if(rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
+			$('.dice-area').find('.lock-wrapper').show();
 		} else if (rollNumber === 1) {
 			rollAllDices();
 			rollNumber--;
@@ -21,6 +24,7 @@ function startDiceRoll() {
 			setTimeout(function(){
 				$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
 				$('.dice-area').find('.locked').toggleClass('unlocked locked');
+				$('.dice-area').find('.lock-wrapper').hide();
 			}, 1400);
 		}
 		sanityCheck(theDiceRolls);
