@@ -14,4 +14,7 @@ function writeTable() {
 		$('.score-table thead tr').append('<th class='+ i +'>'+ players[i].name+'</th>');
 		$('.score-table tbody').find('tr').append('<td class="write-rewrite-table"></td>');
 	}
+    
+    //Highlight the first active player
+    $('.score-table thead tr .0').addClass('highlight');
 }
