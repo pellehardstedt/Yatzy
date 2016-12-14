@@ -50,19 +50,16 @@ var players = [],
 		//log an error message to tell the players to complete the form. 
 		if(notRegistered.length > 0){
 			$('.message-area').find('p').text('Skriv in namn på samtliga spelare!');
-		}
-		/*else{
+		} else {
+			returnArr.forEach(function (activePlayerObject) {
 
-			returnArr.forEach(function () {
-				console.log($(this));
-
-				returnArr.forEach(function () {
-					if($(this).name === activePlayer.name && $(this).playerNo != activePlayer.playerNo) {
-						$(this).name = $(this).name + 'I';
+				returnArr.forEach(function (otherPlayerObject) {
+					if(otherPlayerObject.name === activePlayerObject.name && otherPlayerObject.playerNo != activePlayerObject.playerNo) {
+						otherPlayerObject.name = otherPlayerObject.name + '+';
 					}
 				});
-
-			}*/
+			});
+		}
 
 		return returnArr;
 	}
