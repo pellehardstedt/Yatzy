@@ -21,11 +21,11 @@ var playerObject3 = {
 var playerObject4 = {
   playerNo: 4,
   name: "Jägaren",
-  score: 120,
+  score: 115,
 };
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
-// var result = [playerObject1, playerObject2, playerObject3, playerObject4];
+var result = [playerObject1, playerObject2, playerObject3, playerObject4];
 
 //da real sorting being done
 function highscoreList(resultArray){

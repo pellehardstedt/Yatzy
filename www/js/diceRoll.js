@@ -4,7 +4,7 @@ var theDiceRolls = [];
 //How manny rolls the player has left (3-0)
 var rollNumber = 3;
 
-$(startDiceRoll())
+$(startDiceRoll());
 
 function startDiceRoll() {
 
@@ -28,6 +28,8 @@ function startDiceRoll() {
 			}, 1400);
 		}
 		sanityCheck(theDiceRolls);
+		//update visuals of scores for each category
+		updateCategoryScorePreview(theDiceRolls);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
