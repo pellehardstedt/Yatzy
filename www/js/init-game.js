@@ -40,7 +40,7 @@ var players = [],
 				notRegistered.push(label);
 			}
 			returnArr[i] = {
-				playerNo: (i+1),
+				playerNo: (i),
 				name: playerName,
 				score: 0
 			};
