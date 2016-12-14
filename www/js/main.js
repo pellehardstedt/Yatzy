@@ -33,8 +33,8 @@ $(function(){
 
 	//event listener for "avsluta spel" button on the in game modal menu
 	//calls the function endGame in game.js that starts clean up and shows
-	//the startmenu. 
-	$('#inGameMeny').on('click', '.end-game', function(){
+	//the startmenu.
+	$('body').on('click', '.end-game', function(){
 		endGame();
 	});
 });
