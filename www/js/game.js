@@ -31,8 +31,13 @@ var nextPlayer,
 		var results = scoresForEachCategoryFunc(dice);
 		
 		// print out score previews for all categories
-		$('td.player-'+activePlayer.playerNo).not('.no-preview').not('.filled-in').each(function(i){
-			$(this).html(results[i]);
+		$('td.player-'+activePlayer.playerNo).not('.no-preview').each(function(i){
+			if($(this).hasClass('filled-in')){
+				return;
+			}
+			else{
+				$(this).html(results[i]);
+			}
 		});
 	}
 
