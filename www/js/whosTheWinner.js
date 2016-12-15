@@ -28,12 +28,13 @@ function storeScore(playerArray){
         highscore.forEach(function(playerHighscore, i){
             if(playerActive.score > playerHighscore.score){
                 highscore.splice(i, 0, playerActive);
-                highscore.pop();
+                if(highscore.length>=10){
+                  highscore.pop();
+                }
                 return;
             }
         });
     });
-    console.log(highscore);
 }
 
 
@@ -81,6 +82,16 @@ var playerObject8 = {
   name: "Beata",
   score: 65,
 };
+var playerObject9 = {
+  playerNo: 3,
+  name: "Edde",
+  score: 25,
+};
+var playerObject10 = {
+  playerNo: 3,
+  name: "babian",
+  score: 11,
+};
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
-var highscore = [playerObject1, playerObject2, playerObject3, playerObject4, playerObject5, playerObject6, playerObject7, playerObject8];
+var highscore = [playerObject1, playerObject2, playerObject3, playerObject4, playerObject5, playerObject6, playerObject7, playerObject8, playerObject9, playerObject10];
