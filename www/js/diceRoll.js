@@ -2,7 +2,8 @@
 var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
-var rollNumber = 3;
+var rollNumber = 3,
+		clearDices;
 
 $(startDiceRoll());
 
@@ -22,9 +23,7 @@ function startDiceRoll() {
 			rollNumber--;
 
 			setTimeout(function(){
-				$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
-				$('.dice-area').find('.locked').toggleClass('unlocked locked');
-				$('.dice-area').find('.lock-wrapper').hide();
+				clearDicesFunc();
 			}, 1400);
 		}
 		sanityCheck(theDiceRolls);
@@ -40,6 +39,13 @@ function startDiceRoll() {
 			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
 		}
 	});
+
+	function clearDicesFunc() {
+		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
+		$('.dice-area').find('.locked').toggleClass('unlocked locked');
+		$('.dice-area').find('.lock-wrapper').hide();
+		clearCanvasDices();
+	}
 
 	function rollAllDices() {
 
@@ -83,4 +89,5 @@ function startDiceRoll() {
 			return randomNumber;
 		}
 	}
+	clearDices = clearDicesFunc;
 }

@@ -1,3 +1,5 @@
+var clearCanvasDices;
+
 $(startDicePaint());
 
 function startDicePaint() {
@@ -36,7 +38,7 @@ function paintDiceRoll(roll, canvasID) {
 	var cW = canvas.width;
 	var cH = canvas.height;
 
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	clearCanvasDicesFunc();
 
 	switch(roll) {
 		case 1:
@@ -101,4 +103,10 @@ function paintDiceRoll(roll, canvasID) {
 		ctx.fill();
 		paintFour();
 	}
+
+	function clearCanvasDicesFunc() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
+
+	clearCanvasDices = clearCanvasDicesFunc;
 }

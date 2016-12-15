@@ -5,7 +5,9 @@
 var nextPlayer,
 	endGame,
 	updateCategoryScorePreview,
-	round = 0;
+	round = 0,
+	submitScore,
+	results;
 
 // Self executing function 
 (function(){
@@ -41,9 +43,12 @@ var nextPlayer,
 		});
 	}
 
-	function submitScore() {
+	function submitScoreFunc() {
 
-		nextPlayerFunc();
+		clearDices();
+		rollNumber = 3;
+		$('.dice-area .roll-number').text(rollNumber);
+		nextPlayer();
 	}
 
 	//Sets the next player in the players array to active player. 
@@ -90,4 +95,5 @@ var nextPlayer,
 	nextPlayer = nextPlayerFunc;
 	endGame = endGameFunc;
 	updateCategoryScorePreview = updateCategoryScorePreviewFunc;
+	submitScore = submitScoreFunc;
 })();
