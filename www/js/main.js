@@ -31,9 +31,20 @@ $(function(){
 		message.text('');
 	});
 
+	//hide submitbutton at start
+	$('#submit-button').hide();
+
 	//event listener for when user clicks on a td cell to fill in a score
 	$('.score-table').on('click', 'td', function(){
 		$(this).addClass('filled-in');
+
+		$('#submit-button').slideDown(500);
+	});
+
+	$('#submit-button').on('click', 'button', function(){
+		$('#submit-button').slideUp(500);
+
+		submitScore();
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu

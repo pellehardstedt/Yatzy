@@ -41,6 +41,11 @@ var nextPlayer,
 		});
 	}
 
+	function submitScore() {
+
+		nextPlayerFunc();
+	}
+
 	//Sets the next player in the players array to active player. 
 	//It loops around to first player if activePlayer is the last in array. 
 	function nextPlayerFunc(){
