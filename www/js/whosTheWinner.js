@@ -5,7 +5,7 @@ players.push(playerObject4);
 
 var playersSorted = [];
 
-function winner(players){
+function playersRanked(players){
     var playersSorted = players.slice();
 
     playersSorted.sort(function (b, a) {
@@ -17,9 +17,6 @@ function winner(players){
         }
         return 0;
     });
-    
-
-    return playersSorted;
 }
 
 function storeScore(playerArray){
