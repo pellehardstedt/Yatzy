@@ -29,23 +29,22 @@ var nextPlayer,
 	//and shows this on the scorecard. 
 	function updateCategoryScorePreviewFunc(dice){
 		var results = scoresForEachCategoryFunc(dice);
-		var selectorStr = '.score-table td.player-' +activePlayer.playerNo;
 		
-		$('tr.aces td.player-0').html(results[0]);
-		$('tr.twos td.player-0').html(results[1]);
-		$('tr.threes td.player-0').html(results[2]);
-		$('tr.fours td.player-0').html(results[3]);
-		$('tr.fives td.player-0').html(results[4]);
-		$('tr.sixes td.player-0').html(results[5]);
-		$('tr.one-pair td.player-0').html(results[6]);
-		$('tr.two-pairs td.player-0').html(results[7]);
-		$('tr.three-of-a-kind td.player-0').html(results[8]);
-		$('tr.four-of-a-kind td.player-0').html(results[9]);
-		$('tr.small-straight td.player-0').html(results[10]);
-		$('tr.large-straight td.player-0').html(results[11]);
-		$('tr.full-house td.player-0').html(results[12]);
-		$('tr.chance td.player-0').html(results[13]);
-		$('tr.yatzy td.player-0').html(results[14]);
+		$('tr.aces td.player-'+activePlayer.playerNo).html(results[0]);
+		$('tr.twos td.player-'+activePlayer.playerNo).html(results[1]);
+		$('tr.threes td.player-'+activePlayer.playerNo).html(results[2]);
+		$('tr.fours td.player-'+activePlayer.playerNo).html(results[3]);
+		$('tr.fives td.player-'+activePlayer.playerNo).html(results[4]);
+		$('tr.sixes td.player-'+activePlayer.playerNo).html(results[5]);
+		$('tr.one-pair td.player-'+activePlayer.playerNo).html(results[6]);
+		$('tr.two-pairs td.player-'+activePlayer.playerNo).html(results[7]);
+		$('tr.three-of-a-kind td.player-'+activePlayer.playerNo).html(results[8]);
+		$('tr.four-of-a-kind td.player-'+activePlayer.playerNo).html(results[9]);
+		$('tr.small-straight td.player-'+activePlayer.playerNo).html(results[10]);
+		$('tr.large-straight td.player-'+activePlayer.playerNo).html(results[11]);
+		$('tr.full-house td.player-'+activePlayer.playerNo).html(results[12]);
+		$('tr.chance td.player-'+activePlayer.playerNo).html(results[13]);
+		$('tr.yatzy td.player-'+activePlayer.playerNo).html(results[14]);
 	}
 
 	//Sets the next player in the players array to active player. 
