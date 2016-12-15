@@ -5,9 +5,10 @@ players.push(playerObject4);
 
 var playersSorted = [];
 
-function winner(players){
-    var playersSorted = players.slice();
-
+//input player array
+function winner(playerArray){
+    var playersSorted = playerArray.slice();
+    //sort to 'playersSorted'
     playersSorted.sort(function (b, a) {
         if (a.score > b.score) {
           return 1;
@@ -17,11 +18,11 @@ function winner(players){
         }
         return 0;
     });
-    
-
+    //playersSorted is returned. NOT the original player-array.
     return playersSorted;
 }
 
+//insert 'playersSorted' from the prior function
 function storeScore(playerArray){
     playerArray.forEach(function(playerActive, i){
         highscore.forEach(function(playerHighscore, i){
