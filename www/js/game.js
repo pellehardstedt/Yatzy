@@ -30,21 +30,10 @@ var nextPlayer,
 	function updateCategoryScorePreviewFunc(dice){
 		var results = scoresForEachCategoryFunc(dice);
 		
-		$('tr.aces td.player-'+activePlayer.playerNo).html(results[0]);
-		$('tr.twos td.player-'+activePlayer.playerNo).html(results[1]);
-		$('tr.threes td.player-'+activePlayer.playerNo).html(results[2]);
-		$('tr.fours td.player-'+activePlayer.playerNo).html(results[3]);
-		$('tr.fives td.player-'+activePlayer.playerNo).html(results[4]);
-		$('tr.sixes td.player-'+activePlayer.playerNo).html(results[5]);
-		$('tr.one-pair td.player-'+activePlayer.playerNo).html(results[6]);
-		$('tr.two-pairs td.player-'+activePlayer.playerNo).html(results[7]);
-		$('tr.three-of-a-kind td.player-'+activePlayer.playerNo).html(results[8]);
-		$('tr.four-of-a-kind td.player-'+activePlayer.playerNo).html(results[9]);
-		$('tr.small-straight td.player-'+activePlayer.playerNo).html(results[10]);
-		$('tr.large-straight td.player-'+activePlayer.playerNo).html(results[11]);
-		$('tr.full-house td.player-'+activePlayer.playerNo).html(results[12]);
-		$('tr.chance td.player-'+activePlayer.playerNo).html(results[13]);
-		$('tr.yatzy td.player-'+activePlayer.playerNo).html(results[14]);
+		// print out score previews for all categories
+		$('td.player-'+activePlayer.playerNo).not('.no-preview').each(function(i){
+			$(this).html(results[i]);
+		});
 	}
 
 	//Sets the next player in the players array to active player. 
