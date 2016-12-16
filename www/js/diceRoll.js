@@ -16,6 +16,7 @@ function startDiceRoll() {
 	$('.dice-area').on('click', 'button.roll', function() {
 		if($('.score-table').find('td').hasClass('filled-in')) {
 			alert("Please submit score or remove the marked area in the score table!");
+			return;
 		}	else if (rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
@@ -28,9 +29,9 @@ function startDiceRoll() {
 				clearDicesFunc();
 			}, 1400);
 		}
-		sanityCheck(theDiceRolls);
+		scoresForEachCategory();
 		//update visuals of scores for each category
-		updateCategoryScorePreview(theDiceRolls);
+		updateCategoryScorePreview();
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 

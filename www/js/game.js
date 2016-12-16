@@ -5,33 +5,34 @@
 var nextPlayer,
 	endGame,
 	updateCategoryScorePreview,
-	round = 0,
 	submitScore,
-	results;
+	scoresForEachCategory;
+
+// Global vars
+var results,
+	round = 0;
 
 // Self executing function 
 (function(){
 
-	function scoresForEachCategoryFunc(dice) {
-		var returnArr = [];
-		returnArr = acesToSixes(dice);
-		returnArr.push(onePair(dice));
-		returnArr.push(twoPairs(dice));
-		returnArr.push(threeOfAKind(dice));
-		returnArr.push(fourOfAKind(dice));
-		returnArr.push(smallStraight(dice));
-		returnArr.push(largeStraight(dice));
-		returnArr.push(fullHouse(dice));
-		returnArr.push(chance(dice));
-		returnArr.push(yatzy(dice));
-		return(returnArr);
+	function scoresForEachCategoryFunc() {
+		results = [];
+		results = acesToSixes(theDiceRolls);
+		results.push(onePair(theDiceRolls));
+		results.push(twoPairs(theDiceRolls));
+		results.push(threeOfAKind(theDiceRolls));
+		results.push(fourOfAKind(theDiceRolls));
+		results.push(smallStraight(theDiceRolls));
+		results.push(largeStraight(theDiceRolls));
+		results.push(fullHouse(theDiceRolls));
+		results.push(chance(theDiceRolls));
+		results.push(yatzy(theDiceRolls));
 	}
 
 	//Updates what the current dices would score in each respective category
 	//and shows this on the scorecard. 
-	function updateCategoryScorePreviewFunc(dice){
-		var results = scoresForEachCategoryFunc(dice);
-		
+	function updateCategoryScorePreviewFunc(){
+
 		// print out score previews for all categories
 		$('td.player-'+activePlayer.playerNo).not('.no-preview').each(function(i){
 			if($(this).hasClass('filled-in-perm')){
@@ -44,6 +45,15 @@ var nextPlayer,
 	}
 
 	function submitScoreFunc() {
+		//finds all of the <td>s that belongs to the activePlayer and returns the index of the one with the filled-in class
+		var indexOfFilledIn = $('.score-table td.player-'+activePlayer.playerNo).not('.no-preview').index($('.score-table .filled-in'));
+
+		//FREDRIK! Här ovan ser du indexOfFilledIn, slänger du in det i results (när vi förstår varför results är undifined efter ett kast)
+		//t.ex. function totalCalc(indexOfFilledIn, activePlayer){}
+
+		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
+		$('#submit-button').slideUp(500);
+
 		clearDices();
 		clearAllDicesCanvas();
 		rollNumber = 3;
@@ -113,4 +123,5 @@ var nextPlayer,
 	endGame = endGameFunc;
 	updateCategoryScorePreview = updateCategoryScorePreviewFunc;
 	submitScore = submitScoreFunc;
+	scoresForEachCategory = scoresForEachCategoryFunc;
 })();
