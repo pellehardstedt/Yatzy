@@ -17,18 +17,20 @@ var players = [],
 		players = buildPlayerObjects();
 
 		//Assign first player to activePlayer variable
-		activePlayer = players[0];
+		if(players){
+			activePlayer = players[0];
+		
+			if(players){
+				// write the table
+				writeTable();
 
-		if(players.length > 0){
-			// write the table
-			writeTable();
+				//Highlight the first active player
+				$('.score-table thead tr .0').addClass('highlight');
 
-			//Highlight the first active player
-			$('.score-table thead tr .0').addClass('highlight');
-
-			//Hide start-menu-wrapper and show game-mode-wrapper
-			$('.start-menu-wrapper').hide();
-			$('.game-screen-wrapper').show();
+				//Hide start-menu-wrapper and show game-mode-wrapper
+				$('.start-menu-wrapper').hide();
+				$('.game-screen-wrapper').show();
+			}
 		}
 	}
 
