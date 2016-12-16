@@ -44,7 +44,7 @@ function startDiceRoll() {
 		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
 		$('.dice-area').find('.locked').toggleClass('unlocked locked');
 		$('.dice-area').find('.lock-wrapper').hide();
-		clearCanvasDices();
+		clearAllDicesCanvas();
 	}
 
 	function rollAllDices() {

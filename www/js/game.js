@@ -44,8 +44,8 @@ var nextPlayer,
 	}
 
 	function submitScoreFunc() {
-
 		clearDices();
+		clearAllDicesCanvas();
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
 		nextPlayer();
