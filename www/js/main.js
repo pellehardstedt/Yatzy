@@ -36,9 +36,19 @@ $(function(){
 
 	//event listener for when user clicks on a td cell to fill in a score
 	$('.score-table').on('click', 'td', function(){
-		if(rollNumber != 3 && !$(this).hasClass('no-preview') && !$(this).hasClass('filled-in-perm') && $(this).hasClass('player-' + activePlayer.playerNo)) {
-			$(this).toggleClass('filled-in');
-			$('#submit-button').slideDown(500);
+		if(
+		rollNumber != 3 
+		&& !$(this).hasClass('no-preview')
+		&& !$(this).hasClass('filled-in-perm')
+		&& $(this).hasClass('player-' + activePlayer.playerNo)) {
+
+			if($('.score-table').find('td').hasClass('filled-in') && $(this).hasClass('filled-in')) {
+				$(this).removeClass('filled-in');
+				$('#submit-button').slideUp(500);
+			} else if(!$('.score-table').find('td').hasClass('filled-in')) {
+				$(this).addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			}
 		}
 	});
 
