@@ -6,27 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yatzy</title>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Dosis" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/all.css">
   </head>
   <body>
+
+    <!-- GAME SCREEN HEADER -->
     <header class="temp-header">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-8 col-sm-10">
+          <div class="col-xs-9 col-sm-10">
             <h2>Yatzy</h2>
           </div>
-          <div class="col-xs-4 col-sm-2">
-            <button class="btn btn-default menu-button" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+          <div class="col-xs-3 col-sm-2">
+            <button class="btn btn-default menu-button visible-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+            <button class="btn btn-default btn-lg menu-button hidden-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
           </div>
         </div>
       </div>
     </header>
 
-    <!--SPACE FOR SCOREBOARD -->
-    <div class="container-fluid">
+    <!-- SCOREBOARD -->
+    <div class="container">
       <div class="row">
-          <div class="col-xs-12">
-              <div class="table-responsive">          
+          <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
               <table class="table score-table">
                 <thead>
                   <tr>
@@ -91,28 +94,44 @@
                 </tbody>
               </table>
             </div>
-          </div>        
       </div>
     </div>
+
+    <!-- DICE AREA -->
     <div class="dice-area">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-9 col-sm-10">
-            <canvas class="dices" id="dice-1"></canvas>
-            <canvas class="dices" id="dice-2"></canvas>
-            <canvas class="dices" id="dice-3"></canvas>
-            <canvas class="dices" id="dice-4"></canvas>
-            <canvas class="dices" id="dice-5"></canvas>
-          </div>
-            <div class="col-xs-3 col-sm-2">
-              <h4 class="roll-number"></h4>
-              <button class="btn btn-default roll center-block">Roll</button>
+            <div class="canvas-lock-area">
+              <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+              <canvas class="dices" id="dice-1"></canvas>
             </div>
+            <div class="canvas-lock-area">
+              <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+              <canvas class="dices" id="dice-2"></canvas>
+            </div>
+            <div class="canvas-lock-area">
+              <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+              <canvas class="dices" id="dice-3"></canvas>
+            </div>
+            <div class="canvas-lock-area">
+              <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+              <canvas class="dices" id="dice-4"></canvas>
+            </div>
+            <div class="canvas-lock-area">
+              <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+              <canvas class="dices" id="dice-5"></canvas>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-2">
+            <h4 class="roll-number"></h4>
+            <button class="btn btn-default roll center-block">Roll</button>
           </div>
         </div>
       </div>
+    </div>
 
-    <!-- Modal -->
+    <!-- GAME MENU MODAL -->
     <div class="modal fade" id="inGameMeny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -123,35 +142,35 @@
           <div class="modal-body">
 
             <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
-                <button class="btn btn-primary btn-block btn-lg center-block">Regler</button>
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">Regler</button>
                 <div class="vertical-spacer-m"></div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
-                <button class="btn btn-primary btn-block btn-lg center-block">Instruktioner</button>
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">Instruktioner</button>
                 <div class="vertical-spacer-m"></div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
-                <button class="btn btn-primary btn-block btn-lg center-block">Avsluta spel</button>
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">Avsluta spel</button>
                 <div class="vertical-spacer-m"></div>
               </div>
             </div>
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal button-vertical-spacer">Fortsätt spela!</button>
           </div>
         </div>
       </div>
     </div>
 
-        <!-- Screen size display just for development purposes. -->
+    <!-- Screen size display just for development purposes. -->
     <div class="screensize-reporter">
       <div class="container-fluid">
         <div class="visible-xs">Screen size: xs</div>
@@ -160,6 +179,7 @@
         <div class="visible-lg">Screen size: lg</div>
       </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
@@ -167,6 +187,9 @@
     <script src="js/dicePaint.js"></script>
     <script src="js/diceRoll.js"></script>
     <script src="js/combCalc.js"></script>
+    <script src="js/init-game.js"></script>
+    <script src="js/whosTheWinner.js"></script>
     <script src="js/table.js"></script>
+    <script src="js/highlight.js"></script>
   </body>
 </html>

@@ -2,41 +2,60 @@
 var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
-var rollNumber = 3;
+var rollNumber = 3,
+		clearDices;
 
-$(startDiceRoll())
+$(startDiceRoll());
 
 function startDiceRoll() {
+
+	$('.dice-area').find('.lock-wrapper').hide();
 
 	$('.dice-area .roll-number').text(rollNumber);
 
 	$('.dice-area').on('click', 'button.roll', function() {
-		if(rollNumber > 1) {
+		if($('.score-table').find('td').hasClass('filled-in')) {
+			alert("Please submit score or remove the marked area in the score table!");
+			return;
+		}	else if (rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
+			$('.dice-area').find('.lock-wrapper').show();
 		} else if (rollNumber === 1) {
 			rollAllDices();
 			rollNumber--;
 
 			setTimeout(function(){
-				$('.dice-area').find('.dices').removeClass('locked');
+				clearDicesFunc();
 			}, 1400);
 		}
+		scoresForEachCategory();
+		//update visuals of scores for each category
+			setTimeout(function(){
+				updateCategoryScorePreview();
+			}, 1400);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
-	//Locks the dice you click (adds class 'locked')
-	$('.dice-area').on('click', '.dices', function() {
+	//Locks the dice when you click the lock
+		$('.dice-area').on('click', '.canvas-lock-area', function() {
 		if(rollNumber > 0 && rollNumber < 3) {
-			$(this).toggleClass('locked');
+			$(this).find('i').toggleClass('fa-unlock-alt fa-lock');
+			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
 		}
 	});
+
+	function clearDicesFunc() {
+		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
+		$('.dice-area').find('.locked').toggleClass('unlocked locked');
+		$('.dice-area').find('.lock-wrapper').hide();
+	}
 
 	function rollAllDices() {
 
 		for(var i = 0; i < 5; i++) {
 
-			if($('.dice-area').find('#dice-' + (i + 1)).hasClass('locked')) {
+			if($('.dice-area #dice-' + (i + 1)).siblings().find('i').hasClass('fa-lock')) {
 				continue;
 			}
 
@@ -51,7 +70,7 @@ function startDiceRoll() {
 		}
 
 		//Roll dice illusion with timer (the last rolls are slower then the first ones)
-		function rollDiceIllusion(dice,index) {
+		function rollDiceIllusion(diceID,diceIndex) {
 			var activeTimesToRoll = timesToRoll();
 			var first = true;
 
@@ -59,7 +78,7 @@ function startDiceRoll() {
 				(function() {
 					var random = !first;
 					setTimeout(function(){
-						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[index], dice);
+						paintDiceRoll(random ? oneDiceRoll() : theDiceRolls[diceIndex], diceID);
 					}, activeTimesToRoll);
 					activeTimesToRoll -= 100;
 					first = false;
@@ -74,4 +93,5 @@ function startDiceRoll() {
 			return randomNumber;
 		}
 	}
+	clearDices = clearDicesFunc;
 }

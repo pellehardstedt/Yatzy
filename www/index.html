@@ -6,100 +6,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Yatzy</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Dosis" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/all.css">
 
   </head>
   <body>
 
-    <!-- Start-menu -->
-    <div class="container-fluid">
-      <div class="start-menu-wrapper">
-        <div class="row">
+    <!-- START MENU -->
+    <div class="container-fluid start-menu-wrapper">
+      <div class="row">
 
-          <div class="vertical-spacer-m">
-          </div>
-
-          <div class="col-xs-12">
-            <h1 class="game-logo text-center"> Yatzy </h1>
-          </div>
-        
+        <div class="vertical-spacer-m">
         </div>
 
-        <!-- Form for registering new players -->
-        <div class="row">
-          <div class="player-registration-wrapper">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-              <div class="player-form">
+        <div class="col-xs-12">
+          <h1 class="game-logo text-center"> Yatzy </h1>
+        </div>
+      
+      </div>
 
-                <!-- header -->
-                <div class="row">
-                  <div class="col-xs-12">
-                    <h2 class="text-center p-list-head">Spelare</h2>
-                  </div>
-                </div>
+      <!-- Form for registering new players -->
+      <div class="row player-registration-wrapper">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <div class="player-form">
 
-                <!-- 1 row for player registration-->
-                <div class="row player">
-                  <div class="col-xs-3">
-                    <p class="form-label text-right">1.</p>
-                  </div>
-                  <div class="col-xs-6 center-block">
-                    <input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">
-                  </div>
-                  <div class="col-xs-3">
-                    <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                  </div>
-                </div>
-                
-
-                <div class="row">
-                  <div class="col-xs-3 col-xs-offset-9">
-                    <button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
-                  </div>
-                </div>
-
+            <!-- header -->
+            <div class="row">
+              <div class="col-xs-12">
+                <h2 class="text-center p-list-head">Spelare</h2>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Message area -->
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="message-area">
-                <p class="text-danger text-center"></p>
+            <!-- 1 row for player registration-->
+            <div class="row player">
+              <div class="col-xs-3">
+                <p class="form-label text-right">1.</p>
+              </div>
+              <div class="col-xs-6 center-block">
+                <input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">
+              </div>
+              <div class="col-xs-3">
+                <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Menu buttons -->
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
             
-            <button id="startGame" class="btn btn-primary btn-block btn-lg center-block"> Spela! </button>
-            <div class="vertical-spacer-xs"></div>
+
+            <div class="row">
+              <div class="col-xs-3 col-xs-offset-9">
+                <button id="add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+              </div>
+            </div>
 
           </div>
         </div>
+      </div>
 
+      <!-- Message area -->
+      <div class="container">
         <div class="row">
-          <div class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-4">
-            <button id="highscore-button" data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block"> Highscore </button>
+          <div class="col-xs-12">
+            <div class="message-area">
+              <p class="text-danger text-center"></p>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div class="col-xs-4 col-sm-3 col-md-2">
-            <button class="btn btn-default btn-block"> Regler </button>
-          </div>
+      <!-- Menu buttons -->
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+          
+          <button id="startGame" class="btn btn-primary btn-block btn-lg center-block"> Spela! </button>
+          <div class="vertical-spacer-xs"></div>
 
-          <div class="vertical-spacer-m"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-4">
+          <button data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block highscore-button"> Highscore </button>
         </div>
 
-      </div><!-- ends start-menu -->
-    </div><!-- ends container-fluid -->
+        <div class="col-xs-4 col-sm-3 col-md-2">
+          <button class="btn btn-default btn-block"> Regler </button>
+        </div>
 
+        <div class="vertical-spacer-m"></div>
+      </div>
+    </div><!-- ends container-fluid start-menu -->
+
+    <!-- GAME SCREEN -->
+    <div class="game-screen-wrapper">
+
+      <!-- game screen header -->
+      <header class="temp-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-3 col-sm-5">
+              <h2>Yatzy</h2>
+            </div>
+            <!-- submit button -->
+            <div class="col-xs-3 col-sm-5">
+              <div id="submit-button">
+                <button class="btn btn-default submit-button">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-2">
+              <button class="btn btn-default menu-button visible-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+              <button class="btn btn-default btn-lg menu-button hidden-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+            </div>
+          </div>
+        </div>
+      </header><!-- Ends game screen header -->
+
+      <!-- score card -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+            <table class="table score-table">
+              <thead>
+                <tr>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="aces">
+                  <td class="category-name">Ettor</td>
+                </tr>
+                <tr class="twos">
+                  <td class="category-name">Tvåor</td>
+                </tr>
+                <tr class="threes">
+                  <td class="category-name">Treor</td>
+                </tr>
+                <tr class="fours">
+                  <td class="category-name">Fyror</td>
+                </tr>
+                <tr class="fives">
+                  <td class="category-name">Femmor</td>
+                </tr>
+                <tr class="sixes">
+                  <td class="category-name">Sexor</td>
+                </tr>
+                <tr class="sum no-preview">
+                  <td  class="category-name">Summa</td>
+                </tr>
+                <tr class="bonus no-preview">
+                  <td  class="category-name">Bonus</td>
+                </tr>
+                <tr class="one-pair">
+                  <td  class="category-name">1 par</td>
+                </tr>
+                <tr class="two-pairs">
+                  <td  class="category-name">2 par</td>
+                </tr>
+                <tr class="three-of-a-kind">
+                  <td  class="category-name">Tretal</td>
+                </tr>
+                <tr class="four-of-a-kind">
+                  <td class="category-name">Fyrtal</td>
+                </tr>
+                <tr class="small-straight">
+                  <td class="category-name">Liten stege</td>
+                </tr>
+                <tr class="large-straight">
+                  <td class="category-name">Stor stege</td>
+                </tr>
+                <tr class="full-house">
+                  <td class="category-name">Kåk</td>
+                </tr>
+                <tr class="chance">
+                  <td class="category-name">Chans</td>
+                </tr>
+                <tr class="yatzy">
+                  <td class="category-name">Yatzy</td>
+                </tr>
+                <tr class="total no-preview">
+                  <td class="totalt category-name">TOTALT</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>        
+        </div>
+      </div>
+
+      <!-- dice area -->
+      <div class="dice-area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-9 col-sm-10">
+              <div class="canvas-lock-area">
+                <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+                <canvas class="dices" id="dice-1"></canvas>
+              </div>
+              <div class="canvas-lock-area">
+                <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+                <canvas class="dices" id="dice-2"></canvas>
+              </div>
+              <div class="canvas-lock-area">
+                <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+                <canvas class="dices" id="dice-3"></canvas>
+              </div>
+              <div class="canvas-lock-area">
+                <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+                <canvas class="dices" id="dice-4"></canvas>
+              </div>
+              <div class="canvas-lock-area">
+                <div class="lock-wrapper unlocked"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></div>
+                <canvas class="dices" id="dice-5"></canvas>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-2">
+              <h4 class="roll-number"></h4>
+              <button class="btn btn-default roll center-block">Roll</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- ends container-fluid game-screen-wrapper -->
+
+    <!-- MODALS -->
     <!-- Highscore Modal -->
     <div class="modal fade" id="highscore-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -131,6 +259,61 @@
       </div>
     </div>
 
+    <!-- Game menu modal-->
+    <div class="modal fade" id="inGameMeny" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Meny</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">
+                  Regler
+                </button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">Instruktioner</button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer end-game">Avsluta spel</button>
+                <div class="vertical-spacer-m"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal button-vertical-spacer">Fortsätt spela!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCORESCREEN -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="scoreScreen">
+            <button class="btn btn-default btn-block end-game winner-screen-button">Avsluta spel</button>
+            <button data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block highscore-button winner-screen-button">Highscore</button>
+          </div> 
+        </div>
+      </div>
+    </div>  
+          
+
+    <!-- DEV TOOLS -->
     <!-- Screen size display just for development purposes. -->
     <div class="screensize-reporter">
       <div class="container-fluid">
@@ -148,6 +331,14 @@
     <script src="js/highscoreList.js"></script>
     <script src="js/player-registration.js"></script>
     <script src="js/init-game.js"></script>
+    <script src="js/whosTheWinner.js"></script>
     <script src="js/table.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/dicePaint.js"></script>
+    <script src="js/diceRoll.js"></script>
+    <script src="js/whosTheWinner.js"></script>
+    <script src="js/combCalc.js"></script>
+    <script src="js/scoreScreen.js"></script>
+    <script src="js/highlight.js"></script>
   </body>
 </html>
