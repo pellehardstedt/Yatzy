@@ -17,23 +17,25 @@
 		padding:2px;
 	}
 
-	td.totalt{
-		height: 20px;
-		font-weight: bold;
-	}
-
-	td.category-name{
-		color: black;
-	}
-
-	td.filled-in{
-		font-weight: bold;
-		color: green;
-	}
-
 	td{
 		font-weight: bold;
 		color: lightGray;
+		&.totalt{
+			height: 20px;
+			font-weight: bold;
+		}
+		&.category-name{
+			color: black;
+		}
+		&.filled-in{
+			font-weight: bold;
+			background-color: lightgreen;
+			color: black;
+		}
+		&.filled-in-perm{
+			background-color: lightblue;
+			color: black;
+		}
 	}
 }
 

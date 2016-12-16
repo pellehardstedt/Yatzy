@@ -36,16 +36,16 @@ $(function(){
 
 	//event listener for when user clicks on a td cell to fill in a score
 	$('.score-table').on('click', 'td', function(){
-		if(rollNumber != 3) {
+		if(rollNumber != 3 && !$(this).hasClass('no-preview') && !$(this).hasClass('filled-in-perm') && $(this).hasClass('player-' + activePlayer.playerNo)) {
 			$(this).toggleClass('filled-in');
 			$('#submit-button').slideDown(500);
 		}
 	});
 
 	$('#submit-button').on('click', 'button', function(){
-		$('#submit-button').slideUp(500);
-
+		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
 		submitScore();
+		$('#submit-button').slideUp(500);
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu
