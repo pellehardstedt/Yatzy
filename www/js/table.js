@@ -1,7 +1,7 @@
 //add player name to scorcard and adjust the table to them
 
-//Replace player array
-// var fakePlayers = [1,2,3,4];
+//Global var for hodling functions
+var clearScoreTable;
 
 $(writeTable());
 
@@ -17,6 +17,12 @@ function writeTable() {
 		$('.score-table tbody').find('tr.no-preview').find('td').addClass('no-preview');
 	}
     
-    //Highlight the first active player
-    $('.score-table thead tr .0').addClass('highlight');
+  //Highlight the first active player
+  $('.score-table thead tr .0').addClass('highlight');
+
+  function clearScoreTableFunc() {
+  	$('.score-table').find('td.player-' + activePlayer.playerNo).not('.no-preview, .filled-in-perm').text('');
+  }
+
+  clearScoreTable = clearScoreTableFunc;
 }

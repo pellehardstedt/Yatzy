@@ -39,7 +39,7 @@ var results,
 				return;
 			}
 			else{
-				$(this).html(results[i]);
+				$(this).text(results[i]);
 			}
 		});
 	}
@@ -47,8 +47,9 @@ var results,
 	function submitScoreFunc() {
 		//finds all of the <td>s that belongs to the activePlayer and returns the index of the one with the filled-in class
 		var indexOfFilledIn = $('.score-table td.player-'+activePlayer.playerNo).not('.no-preview').index($('.score-table .filled-in'));
+		console.log(indexOfFilledIn, activePlayer);
 
-		//FREDRIK! Här ovan ser du indexOfFilledIn, slänger du in det i results (när vi förstår varför results är undifined efter ett kast)
+		//FREDRIK! Här ovan ser du indexOfFilledIn, slänger du in det i results[indexOfFilledIn]
 		//t.ex. function totalCalc(indexOfFilledIn, activePlayer){}
 
 		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
@@ -56,6 +57,7 @@ var results,
 
 		clearDices();
 		clearAllDicesCanvas();
+		clearScoreTable();
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
 		nextPlayer();
