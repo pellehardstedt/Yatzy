@@ -34,7 +34,7 @@ var nextPlayer,
 		
 		// print out score previews for all categories
 		$('td.player-'+activePlayer.playerNo).not('.no-preview').each(function(i){
-			if($(this).hasClass('filled-in')){
+			if($(this).hasClass('filled-in-perm')){
 				return;
 			}
 			else{

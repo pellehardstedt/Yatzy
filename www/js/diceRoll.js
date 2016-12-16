@@ -14,7 +14,9 @@ function startDiceRoll() {
 	$('.dice-area .roll-number').text(rollNumber);
 
 	$('.dice-area').on('click', 'button.roll', function() {
-		if(rollNumber > 1) {
+		if($('.score-table').find('td').hasClass('filled-in')) {
+			alert("Please submit score or remove the marked area in the score table!");
+		}	else if (rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
 			$('.dice-area').find('.lock-wrapper').show();
@@ -44,7 +46,6 @@ function startDiceRoll() {
 		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
 		$('.dice-area').find('.locked').toggleClass('unlocked locked');
 		$('.dice-area').find('.lock-wrapper').hide();
-		clearAllDicesCanvas();
 	}
 
 	function rollAllDices() {

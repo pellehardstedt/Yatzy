@@ -35,16 +35,31 @@ $(function(){
 
 	//event listener for when user clicks on a td cell to fill in a score
 	$('.score-table').on('click', 'td', function(){
-		if(rollNumber != 3) {
-			$(this).toggleClass('filled-in');
-			$('#submit-button').slideDown(500);
+		if(
+		rollNumber != 3 //if isn't the first throw
+		&& !$(this).hasClass('no-preview') //if the <td> isn't part of the summa, bonus or total
+		&& !$(this).hasClass('filled-in-perm') //if the <td> hasn't been submitted before before this turn
+		&& $(this).hasClass('player-' + activePlayer.playerNo)) { //if the <td> is the active players <td>
+
+			if(!$('.score-table').find('td').hasClass('filled-in')) { //if a <td> isn't marked this turn
+				$(this).addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			} else if($(this).hasClass('filled-in')) { //if this <td> is marked this turn
+				$(this).removeClass('filled-in');
+				$('#submit-button').slideUp(500);
+			} else if($('.score-table').find('td').hasClass('filled-in') && !$(this).hasClass('filled-in')) { //if a <td> is marked this turn but it's not the clicked <td>
+				$('.score-table').find('.filled-in').removeClass('filled-in');
+				$(this).addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			}
 		}
 	});
 
 	$('#submit-button').on('click', 'button', function(){
-		$('#submit-button').slideUp(500);
-
+		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
 		submitScore();
+		clearAllDicesCanvas();
+		$('#submit-button').slideUp(500);
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu
