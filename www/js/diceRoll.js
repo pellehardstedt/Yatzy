@@ -31,7 +31,9 @@ function startDiceRoll() {
 		}
 		scoresForEachCategory();
 		//update visuals of scores for each category
-		updateCategoryScorePreview();
+			setTimeout(function(){
+				updateCategoryScorePreview();
+			}, 1400);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
