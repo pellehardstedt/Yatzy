@@ -57,10 +57,7 @@ $(function(){
 	});
 
 	$('#submit-button').on('click', 'button', function(){
-		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
 		submitScore();
-		clearAllDicesCanvas();
-		$('#submit-button').slideUp(500);
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu
