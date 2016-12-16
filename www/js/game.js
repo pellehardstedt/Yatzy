@@ -81,6 +81,23 @@ var results,
 
 	function endGameFunc(){
 
+		//Remove all the player rows from last registration
+		$('.player').remove();
+		//and add the first one in the row
+		$('.player-form').find('#add').closest('.row').before(
+				'<div class="row player">' +
+				'<div class="col-xs-3">' +
+				'<p class="form-label text-right">1.</p>' +
+				'</div>' +
+				'<div class="col-xs-6 center-block">' +
+				'<input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">' +
+				'</div>' +
+				'<div class="col-xs-3">' +
+				'<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>' +
+				'</div>' +
+				'</div>'
+			);
+
 		$('.player-form').find('input').each(function(){
 			console.log($(this).val(''));
 		});
