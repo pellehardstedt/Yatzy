@@ -41,13 +41,10 @@ var players = [],
 			var playerName = $(this).find('input').val();
 
 			if(!playerName){
-				alert("fel");
 				var label = $(this).find('input').attr('placeholder');
 				notRegistered.push(label);
 			}
 			else{
-				alert('rätt');
-
 				returnArr[i] = {
 				playerNo: (i),
 				name: playerName,
