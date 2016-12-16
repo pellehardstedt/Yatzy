@@ -41,19 +41,27 @@ var removePlayer;
 	}
 
 	function removePlayerFunc(thisButton){
-		// remove the row whose button was clicked
-		thisButton.closest('.player').remove();
-		//decrease player count
-		playerCount = playerCount = $('.player').length / 1;
 
-		// check to see if addbutton should be enabled again and if so, enable it. 
-		if(playerCount < 4){
-			var addButton = $('.player-form').find('.row:last').find('button');
-			if(addButton.prop('disabled')){
-				addButton.prop('disabled', false);
-			}
+		var amountPlayerRows = $('.player').length;
+
+		if(amountPlayerRows < 2){
+			$('.message-area').find('p').text('Yatzy behöver minst 1 spelare!');
 		}
-		updatePlayerForm();
+		else{
+			// remove the row whose button was clicked
+			thisButton.closest('.player').remove();
+			//decrease player count
+			playerCount = playerCount = $('.player').length / 1;
+
+			// check to see if addbutton should be enabled again and if so, enable it. 
+			if(playerCount < 4){
+				var addButton = $('.player-form').find('.row:last').find('button');
+				if(addButton.prop('disabled')){
+					addButton.prop('disabled', false);
+				}
+			}
+			updatePlayerForm();
+		}
 	}
 
 	// updates player numbers after deleting a row.

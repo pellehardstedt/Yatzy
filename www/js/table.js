@@ -3,7 +3,6 @@
 //Global var for hodling functions
 var clearScoreTable;
 
-$(writeTable());
 
 function writeTable() {
     $('.score-table thead tr').empty();
@@ -21,7 +20,7 @@ function writeTable() {
   $('.score-table thead tr .0').addClass('highlight');
 
   function clearScoreTableFunc() {
-  	$('.score-table').find('td.player-' + activePlayer.playerNo).not('.no-preview, .filled-in-perm').text('');
+    $('.score-table').find('td.player-' + activePlayer.playerNo).not('.no-preview, .filled-in-perm').text('');
   }
 
   clearScoreTable = clearScoreTableFunc;
