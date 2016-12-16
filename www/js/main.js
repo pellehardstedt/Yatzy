@@ -21,7 +21,6 @@ $(function(){
 	//calls startNewGame from init-game.js
 	$('.start-menu-wrapper').on('click', '#startGame', function(){
 		startNewGame();
-		writeTable();
 	});
 
 	//event listener for change on player form text-fields
