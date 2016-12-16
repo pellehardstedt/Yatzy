@@ -17,11 +17,21 @@ var players = [],
 		players = buildPlayerObjects();
 
 		//Assign first player to activePlayer variable
-		activePlayer = players[0];
+		if(players){
+			activePlayer = players[0];
+		
+			if(players){
+				// write the table
+				writeTable();
 
-		//Hide start-menu-wrapper and show game-mode-wrapper
-		$('.start-menu-wrapper').hide();
-		$('.game-screen-wrapper').show();
+				//Highlight the first active player
+				$('.score-table thead tr .0').addClass('highlight');
+
+				//Hide start-menu-wrapper and show game-mode-wrapper
+				$('.start-menu-wrapper').hide();
+				$('.game-screen-wrapper').show();
+			}
+		}
 	}
 
 	// This functions gets playernames from input forms on startmenu and creates player objects. 
@@ -32,15 +42,17 @@ var players = [],
 		$('.player').each(function( i ){
 			var playerName = $(this).find('input').val();
 
-			if(playerName === ''){
+			if(!playerName){
 				var label = $(this).find('input').attr('placeholder');
 				notRegistered.push(label);
 			}
-			returnArr[i] = {
-				playerNo: (i+1),
+			else{
+				returnArr[i] = {
+				playerNo: (i),
 				name: playerName,
 				score: 0
-			};
+				};
+			}
 		});
 
 		//If something has been added to the notRegisteredString, someone has not written their name
@@ -49,6 +61,14 @@ var players = [],
 			$('.message-area').find('p').text('Skriv in namn på samtliga spelare!');
 		}
 		else{
+			returnArr.forEach(function (activePlayerObject) {
+
+				returnArr.forEach(function (otherPlayerObject) {
+					if(otherPlayerObject.name === activePlayerObject.name && otherPlayerObject.playerNo != activePlayerObject.playerNo) {
+						otherPlayerObject.name = otherPlayerObject.name + '+';
+					}
+				});
+			});
 			return returnArr;
 		}
 	}
