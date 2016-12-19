@@ -7,13 +7,18 @@ $(function() {
 function winnerScreen() {
 	//Shows name of winner of the game
 
-	$('.allWinners').prepend('<h4>4th: ' + "TestErik4"/*playersSorted[3].name*/ + ' Poäng: ' + "100"/*playersSorted[3].score*/ + '</h4>');
+	playersRanked();
 
-	$('.allWinners').prepend('<h4>3rd: ' + "TestErik3"/*playersSorted[2].name*/ + ' Poäng: ' + "200"/*playersSorted[2].score*/ + '</h4>');
-
-	$('.allWinners').prepend('<h4>2nd: ' + "TestErik2"/*playersSorted[1].name*/ + ' Poäng: ' + "300"/*playersSorted[1].score*/ + '</h4>');
-
-	$('.allWinners').prepend('<h3>1st: ' + "TestErik1"/*playersSorted[0].name*/ + ' Poäng: ' + "400"/*playersSorted[0].score*/ + '</h3>');
+	$('.allWinners').append('<h2>Plats 1: ' + playersSorted[0].name + ' Poäng: ' + playersSorted[0].scoreTotal + '</h2>');
+	if(players.length < 3) {
+		$('.allWinners').append('<h3>Plats 2: ' + playersSorted[1].name + ' Poäng: ' + playersSorted[1].scoreTotal + '</h3>');
+		if(players.length < 4) {
+			$('.allWinners').append('<h4>Plats 3: ' + playersSorted[2].name + ' Poäng: ' + playersSorted[2].scoreTotal + '</h4>');
+			if(players.length < 5) {
+				$('.allWinners').append('<h5>Plats 4: ' + playersSorted[3].name + ' Poäng: ' + playersSorted[3].scoreTotal + '</h5>');
+			}
+		}
+	}
 
 	$('.scoreScreen').show();
 	storeScore(playersSorted);
