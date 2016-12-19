@@ -67,9 +67,10 @@ var results,
 	function totalCalcScore(i) {
 		if(i < 6) {
 			activePlayer.scoreBonus += results[i];
-		} else {
-			activePlayer.scoreTotal += results[i];
+			$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
 		}
+
+		activePlayer.scoreTotal += results[i];
 
 		if(activePlayer.scoreBonus >= 63 && activePlayer.bonus === false) {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
@@ -77,13 +78,7 @@ var results,
 			activePlayer.bonus = true;
 		}
 
-		$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
-
-		if(activePlayer.scoreBonus >= 63) {
-			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus);
-		} else {
-			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus);
-		}
+		$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal);
 	}
 
 	//Sets the next player in the players array to active player. 
@@ -128,7 +123,7 @@ var results,
 		$('#inGameMeny .close' ).trigger( "click" );
 		$('.start-menu-wrapper').show();
 		$('.game-screen-wrapper').hide();
-		$('.scoreScreen').fadeOut(1000);
+		$('.scoreScreen').fadeOut(700);
 
 
 		round=0;
@@ -138,7 +133,6 @@ var results,
 		round++;
 
 		if (round==12) {
-			playersRanked();
 			winnerScreen();
 		}
 
