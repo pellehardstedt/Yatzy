@@ -71,9 +71,10 @@ var results,
 			activePlayer.scoreTotal += results[i];
 		}
 
-		if(activePlayer.scoreBonus >= 63 || !activePlayer.bonus) {
+		if(activePlayer.scoreBonus >= 63 && activePlayer.bonus === false) {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
 			activePlayer.scoreTotal += 50;
+			activePlayer.bonus = true;
 		}
 
 		$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
