@@ -1,13 +1,8 @@
-players.push(playerObject1);
-players.push(playerObject2);
-players.push(playerObject3);
-players.push(playerObject4);
-
 var playersSorted = [];
 
 //input player array
-function playersRanked(playerArray){
-    var playersSorted = playerArray.slice();
+function playersRanked(){
+    playersSorted = players.slice();
     //sort to 'playersSorted'
 
     playersSorted.sort(function (b, a) {
@@ -19,9 +14,6 @@ function playersRanked(playerArray){
         }
         return 0;
     });
-
-    //playersSorted is returned. NOT the original player-array.
-    return playersSorted;
 }
 
 
