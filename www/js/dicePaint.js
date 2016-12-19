@@ -13,15 +13,15 @@ function startDicePaint() {
 	function reziseDices() {
 
 		if($(window).width() < 389) {
-			$('canvas.dices').attr({height: '34', width: '34'});
+			$('canvas.dices').attr({height: '40', width: '40'});
 		} else if($(window).width() < 461) {
-			$('canvas.dices').attr({height: '45', width: '45'});
+			$('canvas.dices').attr({height: '40', width: '40'});
 		} else if($(window).width() < 550) {
-			$('canvas.dices').attr({height: '55', width: '55'});
+			$('canvas.dices').attr({height: '40', width: '40'});
 		}  else if($(window).width() < 780) {
-			$('canvas.dices').attr({height: '70', width: '70'});
+			$('canvas.dices').attr({height: '60', width: '60'});
 		} else {
-			$('canvas.dices').attr({height: '105', width: '105'});
+			$('canvas.dices').attr({height: '70', width: '70'});
 		}
 	}
 }
