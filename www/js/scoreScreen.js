@@ -24,7 +24,7 @@ function winnerScreen() {
 	storeScore(playersSorted);
 }
 
-//When leaving scorescreen the screen clears
+//Pushing the restartbutton clears the screen
 function clearScoreScreen() {
     $('.allWinners').text("");
   }
