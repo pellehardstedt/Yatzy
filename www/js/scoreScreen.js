@@ -4,13 +4,16 @@ $(function() {
 });
 
 
-	function winnerScreen() {
-		//Visar spelarens score. coming soon!
-		$(".score").text('score');
-		//Shows name of winner of the game
-		$('.scoreScreen').prepend('<p>To the victor go the spoils!</p>');
-		$('.scoreScreen').prepend('<p>' + winner(players)[0].name + ' is the winner</p>');
-		$('.scoreScreen').prepend('<h2>You won!</h2>');
-		$(".scoreScreen").show();
-		storeScore(playersSorted);
-	}
+function winnerScreen() {
+	//Shows name of winner of the game
+	$('.scoreScreen').prepend('<h2>Plats 1: ' + playersSorted[0].name + ' Poäng: ' + playersSorted[0].score + '</h2>');
+
+	$('.scoreScreen').prepend('<h3>Plats 2: ' + playersSorted[1].name + ' Poäng: ' + playersSorted[1].score + '</h3>');
+
+	$('.scoreScreen').prepend('<h4>Plats 3: ' + playersSorted[2].name + ' Poäng: ' + playersSorted[2].score + '</h4>');
+
+	$('.scoreScreen').prepend('<h5>Plats 4: ' + playersSorted[3].name + ' Poäng: ' + playersSorted[3].score + '</h5>');
+
+	$('.scoreScreen').show();
+	storeScore(playersSorted);
+}
