@@ -23,7 +23,7 @@ var removePlayer;
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
 			'<div class="col-xs-6 center-block">' +
-			'<input type="text" class="form-control" id="playerNameInput' + nextPlayerNum + '"' +
+			'<input type="text" class="form-control" maxlength="12" id="playerNameInput' + nextPlayerNum + '"' +
 			'placeholder="Namn på spelare ' + nextPlayerNum + '">' +
 			'</div>' +
 			'<div class="col-xs-3">' +
