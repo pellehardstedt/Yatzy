@@ -48,9 +48,11 @@ var players = [],
 			}
 			else{
 				returnArr[i] = {
-				playerNo: (i),
-				name: playerName,
-				score: 0
+					playerNo: (i),
+					name: playerName,
+					scoreBonus: 0,
+					bonus: false,
+					scoreTotal: 0
 				};
 			}
 		});
