@@ -61,13 +61,13 @@ var results,
 		nextPlayer();
 	}
 
-	function totalCalcScore(i) {
-		if(i < 6) {
-			activePlayer.scoreBonus += results[i];
+	function totalCalcScore(resultIndex) {
+		if(resultIndex < 6) {
+			activePlayer.scoreBonus += results[resultIndex];
 			$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
 		}
 
-		activePlayer.scoreTotal += results[i];
+		activePlayer.scoreTotal += results[resultIndex];
 
 		if(activePlayer.scoreBonus >= 63 && activePlayer.bonus === false) {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
