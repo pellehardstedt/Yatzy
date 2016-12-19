@@ -54,7 +54,7 @@
 
             <div class="row">
               <div class="col-xs-3 col-xs-offset-9">
-                <button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+                <button id="add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
               </div>
             </div>
 
@@ -103,8 +103,14 @@
       <header class="temp-header">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xs-9 col-sm-10">
+            <div class="col-xs-3 col-sm-5">
               <h2>Yatzy</h2>
+            </div>
+            <!-- submit button -->
+            <div class="col-xs-3 col-sm-5">
+              <div id="submit-button">
+                <button class="btn btn-default submit-button">Submit</button>
+              </div>
             </div>
             <div class="col-xs-3 col-sm-2">
               <button class="btn btn-default menu-button visible-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
@@ -118,70 +124,70 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                <table class="table score-table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="aces">
-                      <td>Ettor</td>
-                    </tr>
-                    <tr class="twos">
-                      <td>Tvåor</td>
-                    </tr>
-                    <tr class="threes">
-                      <td>Treor</td>
-                    </tr>
-                    <tr class="fours">
-                      <td>Fyror</td>
-                    </tr>
-                    <tr class="fives">
-                      <td>Femmor</td>
-                    </tr>
-                    <tr class="sixes">
-                      <td>Sexor</td>
-                    </tr>
-                    <tr class="sum">
-                      <td>Summa</td>
-                    </tr>
-                    <tr class="bonus">
-                      <td>Bonus</td>
-                    </tr>
-                    <tr class="one-pair">
-                      <td>1 par</td>
-                    </tr>
-                    <tr class="two-pairs">
-                      <td>2 par</td>
-                    </tr>
-                    <tr class="three-of-a-kind">
-                      <td>Tretal</td>
-                    </tr>
-                    <tr class="four-of-a-kind">
-                      <td>Fyrtal</td>
-                    </tr>
-                    <tr class="small-straight">
-                      <td>Liten stege</td>
-                    </tr>
-                    <tr class="large-straight">
-                      <td>Stor stege</td>
-                    </tr>
-                    <tr class="full-house">
-                      <td>Kåk</td>
-                    </tr>
-                    <tr class="chance">
-                      <td>Chans</td>
-                    </tr>
-                    <tr class="yatzy">
-                      <td>Yatzy</td>
-                    </tr>
-                    <tr class="total">
-                      <td class="totalt">TOTALT</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>        
+            <table class="table score-table">
+              <thead>
+                <tr>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="aces">
+                  <td class="category-name">Ettor</td>
+                </tr>
+                <tr class="twos">
+                  <td class="category-name">Tvåor</td>
+                </tr>
+                <tr class="threes">
+                  <td class="category-name">Treor</td>
+                </tr>
+                <tr class="fours">
+                  <td class="category-name">Fyror</td>
+                </tr>
+                <tr class="fives">
+                  <td class="category-name">Femmor</td>
+                </tr>
+                <tr class="sixes">
+                  <td class="category-name">Sexor</td>
+                </tr>
+                <tr class="sum no-preview">
+                  <td  class="category-name">Summa</td>
+                </tr>
+                <tr class="bonus no-preview">
+                  <td  class="category-name">Bonus</td>
+                </tr>
+                <tr class="one-pair">
+                  <td  class="category-name">1 par</td>
+                </tr>
+                <tr class="two-pairs">
+                  <td  class="category-name">2 par</td>
+                </tr>
+                <tr class="three-of-a-kind">
+                  <td  class="category-name">Tretal</td>
+                </tr>
+                <tr class="four-of-a-kind">
+                  <td class="category-name">Fyrtal</td>
+                </tr>
+                <tr class="small-straight">
+                  <td class="category-name">Liten stege</td>
+                </tr>
+                <tr class="large-straight">
+                  <td class="category-name">Stor stege</td>
+                </tr>
+                <tr class="full-house">
+                  <td class="category-name">Kåk</td>
+                </tr>
+                <tr class="chance">
+                  <td class="category-name">Chans</td>
+                </tr>
+                <tr class="yatzy">
+                  <td class="category-name">Yatzy</td>
+                </tr>
+                <tr class="total no-preview">
+                  <td class="totalt category-name">TOTALT</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>        
         </div>
       </div>
 
@@ -301,6 +307,9 @@
           <div class="scoreScreen">
             <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer end-game center-block">Avsluta spel</button>
             <button data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block highscore-button center-block">Highscore</button>
+            <button class="btn btn-default btn-block end-game winner-screen-button">Avsluta spel</button>
+            <button data-toggle="modal" data-target="#highscore-modal" class="btn btn-default btn-block highscore-button winner-screen-button">Highscore</button>
+
           </div> 
         </div>
       </div>

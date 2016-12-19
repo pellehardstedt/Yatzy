@@ -2,7 +2,8 @@
 var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
-var rollNumber = 3;
+var rollNumber = 3,
+		clearDices;
 
 $(startDiceRoll());
 
@@ -13,7 +14,10 @@ function startDiceRoll() {
 	$('.dice-area .roll-number').text(rollNumber);
 
 	$('.dice-area').on('click', 'button.roll', function() {
-		if(rollNumber > 1) {
+		if($('.score-table').find('td').hasClass('filled-in')) {
+			alert("Please submit score or remove the marked area in the score table!");
+			return;
+		}	else if (rollNumber > 1) {
 			rollAllDices();
 			rollNumber--;
 			$('.dice-area').find('.lock-wrapper').show();
@@ -22,14 +26,14 @@ function startDiceRoll() {
 			rollNumber--;
 
 			setTimeout(function(){
-				$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
-				$('.dice-area').find('.locked').toggleClass('unlocked locked');
-				$('.dice-area').find('.lock-wrapper').hide();
+				clearDicesFunc();
 			}, 1400);
 		}
-		sanityCheck(theDiceRolls);
+		scoresForEachCategory();
 		//update visuals of scores for each category
-		updateCategoryScorePreview(theDiceRolls);
+			setTimeout(function(){
+				updateCategoryScorePreview();
+			}, 1400);
 		$('.dice-area .roll-number').text(rollNumber);
 	});
 
@@ -40,6 +44,12 @@ function startDiceRoll() {
 			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
 		}
 	});
+
+	function clearDicesFunc() {
+		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
+		$('.dice-area').find('.locked').toggleClass('unlocked locked');
+		$('.dice-area').find('.lock-wrapper').hide();
+	}
 
 	function rollAllDices() {
 
@@ -83,4 +93,5 @@ function startDiceRoll() {
 			return randomNumber;
 		}
 	}
+	clearDices = clearDicesFunc;
 }
