@@ -21,6 +21,6 @@ $('body').on('click', '.highscore-button', function(){
   highscoreList(players);
   //for each element in 'result'
   highscore.forEach(function(player, i){
-    $('.modal-tbody-highscore').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.score + '</td></tr>');
+    $('.modal-tbody-highscore').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.scoreTotal + '</td></tr>');
   });
 });
