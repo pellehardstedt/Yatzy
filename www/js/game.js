@@ -67,9 +67,9 @@ var results,
 	function totalCalcScore(i) {
 		if(i < 6) {
 			activePlayer.scoreBonus += results[i];
-		} else {
-			activePlayer.scoreTotal += results[i];
 		}
+
+		activePlayer.scoreTotal += results[i];
 
 		if(activePlayer.scoreBonus >= 63 && activePlayer.bonus === false) {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
