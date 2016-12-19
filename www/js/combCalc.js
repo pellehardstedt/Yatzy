@@ -91,17 +91,18 @@ function largeStraight(dice) {
 
 function fullHouse(dice) {
 	var sum = 0;
-	var counter = 0;
+	var pair = false;
+	var thrice =  false;
 	for (var i = 1; i <= 6; i++) {
 		if (nbrOf(dice, i) === 2) {
 			sum += i * 2;
-			counter++;
+			pair = true;
 		}
 		if (nbrOf(dice, i) === 3) {
 			sum += i * 3;
-			counter++;
+			thrice = true;
 		}
-		if (counter === 2) {
+		if (pair && thrice) {
 			return sum;
 		}
 	}
