@@ -138,7 +138,6 @@ var results,
 		round++;
 
 		if (round==12) {
-			playersRanked();
 			winnerScreen();
 		}
 
