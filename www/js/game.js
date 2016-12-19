@@ -47,10 +47,7 @@ var results,
 	function submitScoreFunc() {
 		//finds all of the <td>s that belongs to the activePlayer and returns the index of the one with the filled-in class
 		var indexOfFilledIn = $('.score-table td.player-'+activePlayer.playerNo).not('.no-preview').index($('.score-table .filled-in'));
-		console.log(indexOfFilledIn, activePlayer);
 
-		//FREDRIK! Här ovan ser du indexOfFilledIn, slänger du in det i results[indexOfFilledIn]
-		//t.ex. function totalCalc(indexOfFilledIn, activePlayer){}
 		totalCalcScore(indexOfFilledIn);
 
 		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
