@@ -129,7 +129,7 @@ var results,
 	function roundCounter(){
 		round++;
 
-		if (round==12) {
+		if (round==15) {
 			winnerScreen();
 		}
 
