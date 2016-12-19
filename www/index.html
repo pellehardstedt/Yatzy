@@ -44,7 +44,7 @@
                 <p class="form-label text-right">1.</p>
               </div>
               <div class="col-xs-6 center-block">
-                <input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">
+                <input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1" maxlength="12">
               </div>
               <div class="col-xs-3">
                 <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
@@ -103,18 +103,19 @@
       <header class="temp-header">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xs-3 col-sm-5">
+            <div class="col-xs-6 col-sm-8">
               <h2>Yatzy</h2>
             </div>
             <!-- submit button -->
-            <div class="col-xs-3 col-sm-5">
+            <div class="col-xs-3 col-sm-2">
               <div id="submit-button">
-                <button class="btn btn-default submit-button">Välj</button>
+                <button class="btn btn-default submit-button visible-xs">Välj</button>
+                <button class="btn btn-default submit-button btn-lg hidden-xs btn-block">Välj</button>
               </div>
             </div>
             <div class="col-xs-3 col-sm-2">
-              <button class="btn btn-default menu-button visible-xs pull-right" data-toggle="modal" data-target="#inGameMeny">Meny</button>
-              <button class="btn btn-default btn-lg menu-button hidden-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+              <button class="btn btn-default menu-button visible-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
+              <button class="btn btn-default btn-lg menu-button hidden-xs btn-block" data-toggle="modal" data-target="#inGameMeny">Meny</button>
             </div>
           </div>
         </div>
