@@ -13,7 +13,7 @@ function writeTable() {
 		$('.score-table thead tr').append('<th class='+ i +'>'+ players[i].name +'</th>');
 		$('.score-table tbody').find('tr').append('<td class="write-rewrite-table player-' + i + '"></td>');
 		//add class no-preview to sum,bonus and total td's
-		$('.score-table tbody').find('tr.no-preview').find('td').addClass('no-preview');
+		$('.score-table tbody').find('tr.sum, tr.bonus, tr.total').find('td:nth-child(2)').addClass('no-preview');
 	}
     
   //Highlight the first active player
