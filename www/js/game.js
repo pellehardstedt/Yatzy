@@ -51,6 +51,7 @@ var results,
 
 		//FREDRIK! Här ovan ser du indexOfFilledIn, slänger du in det i results[indexOfFilledIn]
 		//t.ex. function totalCalc(indexOfFilledIn, activePlayer){}
+		totalCalcScore(indexOfFilledIn);
 
 		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
 		$('#submit-button').slideUp(500);
@@ -61,6 +62,28 @@ var results,
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
 		nextPlayer();
+	}
+
+	function totalCalcScore(i) {
+		if(i < 6) {
+			activePlayer.scoreBonus += results[i];
+		} else {
+			activePlayer.scoreTotal += results[i];
+		}
+
+		if(activePlayer.scoreBonus >= 63) {
+			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
+		} else {
+			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(0);
+		}
+
+		$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
+
+		if(activePlayer.scoreBonus >= 63) {
+			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus + 50);
+		} else {
+			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus);
+		}
 	}
 
 	//Sets the next player in the players array to active player. 

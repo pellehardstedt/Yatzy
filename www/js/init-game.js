@@ -50,7 +50,8 @@ var players = [],
 				returnArr[i] = {
 				playerNo: (i),
 				name: playerName,
-				score: 0
+				scoreBonus: 0,
+				scoreTotal: 0
 				};
 			}
 		});

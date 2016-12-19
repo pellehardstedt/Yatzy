@@ -43,56 +43,66 @@ function storeScore(playerArray){
 var playerObject1 = {
   playerNo: 1,
   name: "Freddy",
-  score: 100,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 
 var playerObject2 = {
   playerNo: 2,
   name: "Tommy",
-  score: 95,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 
 var playerObject3 = {
   playerNo: 3,
   name: "Victor",
-  score: 90,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 
 var playerObject4 = {
   playerNo: 4,
   name: "Karl",
-  score: 85,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 
 var playerObject5 = {
   playerNo: 3,
   name: "Nanna",
-  score: 80,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 var playerObject6 = {
   playerNo: 3,
   name: "Olle",
-  score: 75,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 var playerObject7 = {
   playerNo: 3,
   name: "Fabian",
-  score: 70,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 var playerObject8 = {
   playerNo: 3,
   name: "Beata",
-  score: 65,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 var playerObject9 = {
   playerNo: 3,
   name: "Edde",
-  score: 25,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 var playerObject10 = {
   playerNo: 3,
   name: "babian",
-  score: 11,
+  scoreBonus: 0,
+  scoreTotal: 0,
 };
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
