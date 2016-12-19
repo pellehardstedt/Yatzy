@@ -71,16 +71,15 @@ var results,
 			activePlayer.scoreTotal += results[i];
 		}
 
-		if(activePlayer.scoreBonus >= 63) {
+		if(activePlayer.scoreBonus >= 63 || !activePlayer.bonus) {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
-		} else {
-			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(0);
+			activePlayer.scoreTotal += 50;
 		}
 
 		$('.score-table td.player-' + activePlayer.playerNo).eq(6).text(activePlayer.scoreBonus);
 
 		if(activePlayer.scoreBonus >= 63) {
-			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus + 50);
+			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus);
 		} else {
 			$('.score-table td.player-' + activePlayer.playerNo).eq(17).text(activePlayer.scoreTotal + activePlayer.scoreBonus);
 		}
