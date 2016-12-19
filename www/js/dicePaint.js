@@ -1,3 +1,5 @@
+var clearAllDicesCanvas;
+
 $(startDicePaint());
 
 function startDicePaint() {
@@ -101,4 +103,18 @@ function paintDiceRoll(roll, canvasID) {
 		ctx.fill();
 		paintFour();
 	}
+
+	function clearAllDicesCanvasFunc() {
+		for(var i = 1; i < 6; i++) {
+			var canvas = document.getElementById("dice-" + i);
+			var ctx = canvas.getContext("2d");
+
+			var cW = canvas.width;
+			var cH = canvas.height;
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+	}
+
+	clearAllDicesCanvas = clearAllDicesCanvasFunc;
 }

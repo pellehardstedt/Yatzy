@@ -21,7 +21,6 @@ $(function(){
 	//calls startNewGame from init-game.js
 	$('.start-menu-wrapper').on('click', '#startGame', function(){
 		startNewGame();
-		writeTable();
 	});
 
 	//event listener for change on player form text-fields
@@ -29,6 +28,35 @@ $(function(){
 	$('.player-form').on('change', 'input', function(){
 		var message = $('.message-area').find('p');
 		message.text('');
+	});
+
+	//hide submitbutton at start
+	$('#submit-button').hide();
+
+	//event listener for when user clicks on a td cell to fill in a score
+	$('.score-table').on('click', 'td', function(){
+		if(
+		rollNumber != 3 //if isn't the first throw
+		&& !$(this).hasClass('no-preview') //if the <td> isn't part of the summa, bonus or total
+		&& !$(this).hasClass('filled-in-perm') //if the <td> hasn't been submitted before before this turn
+		&& $(this).hasClass('player-' + activePlayer.playerNo)) { //if the <td> is the active players <td>
+
+			if(!$('.score-table').find('td').hasClass('filled-in')) { //if a <td> isn't marked this turn
+				$(this).addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			} else if($(this).hasClass('filled-in')) { //if this <td> is marked this turn
+				$(this).removeClass('filled-in');
+				$('#submit-button').slideUp(500);
+			} else if($('.score-table').find('td').hasClass('filled-in') && !$(this).hasClass('filled-in')) { //if a <td> is marked this turn but it's not the clicked <td>
+				$('.score-table').find('.filled-in').removeClass('filled-in');
+				$(this).addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			}
+		}
+	});
+
+	$('#submit-button').on('click', 'button', function(){
+		submitScore();
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu

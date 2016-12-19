@@ -5,8 +5,10 @@ players.push(playerObject4);
 
 var playersSorted = [];
 
-function playersRanked(players){
-    var playersSorted = players.slice();
+//input player array
+function playersRanked(playerArray){
+    var playersSorted = playerArray.slice();
+    //sort to 'playersSorted'
 
     playersSorted.sort(function (b, a) {
         if (a.score > b.score) {
@@ -17,19 +19,24 @@ function playersRanked(players){
         }
         return 0;
     });
+
+    //playersSorted is returned. NOT the original player-array.
+    return playersSorted;
 }
 
+//insert 'playersSorted' from the prior function
 function storeScore(playerArray){
     playerArray.forEach(function(playerActive, i){
         highscore.forEach(function(playerHighscore, i){
             if(playerActive.score > playerHighscore.score){
                 highscore.splice(i, 0, playerActive);
-                highscore.pop();
+                if(highscore.length>=10){
+                  highscore.pop();
+                }
                 return;
             }
         });
     });
-    console.log(highscore);
 }
 
 
@@ -77,6 +84,16 @@ var playerObject8 = {
   name: "Beata",
   score: 65,
 };
+var playerObject9 = {
+  playerNo: 3,
+  name: "Edde",
+  score: 25,
+};
+var playerObject10 = {
+  playerNo: 3,
+  name: "babian",
+  score: 11,
+};
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
-var highscore = [playerObject1, playerObject2, playerObject3, playerObject4, playerObject5, playerObject6, playerObject7, playerObject8];
+var highscore = [playerObject1, playerObject2, playerObject3, playerObject4, playerObject5, playerObject6, playerObject7, playerObject8, playerObject9, playerObject10];
