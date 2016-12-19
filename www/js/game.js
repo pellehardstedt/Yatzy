@@ -128,7 +128,7 @@ var results,
 		$('#inGameMeny .close' ).trigger( "click" );
 		$('.start-menu-wrapper').show();
 		$('.game-screen-wrapper').hide();
-		$('.scoreScreen').fadeOut(1000);
+		$('.scoreScreen').fadeOut(700);
 
 
 		round=0;
