@@ -6,9 +6,10 @@ players.push(playerObject4);
 var playersSorted = [];
 
 //input player array
-function winner(playerArray){
+function playersRanked(playerArray){
     var playersSorted = playerArray.slice();
     //sort to 'playersSorted'
+
     playersSorted.sort(function (b, a) {
         if (a.score > b.score) {
           return 1;
@@ -18,6 +19,7 @@ function winner(playerArray){
         }
         return 0;
     });
+
     //playersSorted is returned. NOT the original player-array.
     return playersSorted;
 }
