@@ -18,13 +18,13 @@ function playersRanked(){
 
 
 //insert 'playersSorted' from the prior function
-function storeScore(playerArray){
+function storeScore(){
 
     //Parse localStorage into (non-global) array 'parsedHighscore'
     var parsedHighscore = JSON.parse(localStorage.getItem("highscore"));
 
     //for each player
-    playerArray.forEach(function(playerActive, i){
+    playerSorted.forEach(function(playerActive, i){
       //check with each highscore-position
         parsedHighscore.forEach(function(playerHighscore, i){
             if(playerActive.score > playerHighscore.score){
