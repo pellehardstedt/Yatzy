@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .score-table{
 	margin-bottom: 140px;
 	font-size:13px; 
@@ -23,19 +24,53 @@
 		color: lightGray;
 		&.totalt{
 			height: 20px;
+=======
+.score-table-container{
+	margin-bottom: 100px;
+	height: 75vh;
+	.score-table{
+		height: 75vh;
+		font-size:13px; 
+		border: solid black 2px;
+		& > thead > tr > th{
+>>>>>>> master
 			font-weight: bold;
+			border-right: solid black 1px;
+			border-bottom: solid black 2px;
+			padding-bottom: 2px;
 		}
-		&.category-name{
-			color: black;
+
+		& > tbody > tr > td {
+			height:10px;
+			border-right: solid black 1px;
+			border-bottom: solid black 1px;
+			width: 80px;
+			padding:2px;
 		}
-		&.filled-in{
+
+		td{
 			font-weight: bold;
-			background-color: lightgreen;
-			color: black;
-		}
-		&.filled-in-perm{
-			background-color: lightblue;
-			color: black;
+			vertical-align: middle;
+			color: lightGray;
+			&.totalt{
+				height: 20px;
+				font-weight: bold;
+			}
+			&.category-name{
+				color: black;
+			}
+			&.no-preview{
+				color: green;
+			}
+			&.filled-in{
+				font-weight: bold;
+				background-color: lightgreen;
+				color: black;
+			}
+			&.filled-in-perm{
+				background-color: lightblue;
+				color: black;
+			}
 		}
 	}
 }
