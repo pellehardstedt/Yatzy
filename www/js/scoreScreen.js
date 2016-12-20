@@ -10,7 +10,6 @@ function winnerScreen() {
 	playersRanked();
 
 	$('.allWinners').append('<h2><strong>1st: ' + playersSorted[0].name + ' Poäng: ' + playersSorted[0].scoreTotal + '</strong></h2>');
-	console.log(players.length);
 	if(players.length >= 2) {
 		$('.allWinners').append('<h3>2nd: ' + playersSorted[1].name + ' Poäng: ' + playersSorted[1].scoreTotal + '</h3>');
 		if(players.length >= 3) {
