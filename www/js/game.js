@@ -98,6 +98,10 @@ var results,
 
 		//Remove all the player rows from last registration
 		$('.player').remove();
+		//Set player count to 1
+		playerCount = 1;
+		//Enable the add button
+		$('.player-form').find('.row:last').find('button').prop('disabled', false);
 		//and add the first one in the row
 		$('.player-form').find('#add').closest('.row').before(
 				'<div class="row player">' +
