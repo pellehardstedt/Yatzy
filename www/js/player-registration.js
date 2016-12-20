@@ -5,10 +5,10 @@
 // Globals
 var addNewPlayer;
 var removePlayer;
+var playerCount;
 
 //Self executing function
 (function(){
-	var playerCount;
 
 	function addNewPlayerFunc(thisButton){
 		var nextPlayerNum;
