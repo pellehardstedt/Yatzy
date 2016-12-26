@@ -23,6 +23,7 @@ var players = [],
 			if(players){
 				// write the table
 				writeTable();
+				totalClearOfAll();
 
 				//Highlight the first active player
 				$('.score-table thead tr .0').addClass('highlight');

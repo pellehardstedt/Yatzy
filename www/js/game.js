@@ -54,7 +54,6 @@ var results,
 		$('#submit-button').slideUp(500);
 
 		clearDices();
-		clearAllDicesCanvas();
 		clearScoreTable();
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
@@ -123,7 +122,7 @@ var results,
 		$('.scoreScreen').fadeOut(700);
 
 
-		round=0;
+		totalClearOfAll();
 	}
 
 	function roundCounter(){
