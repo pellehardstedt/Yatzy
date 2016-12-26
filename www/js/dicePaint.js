@@ -1,5 +1,3 @@
-var clearAllDicesCanvas;
-
 $(startDicePaint());
 
 function startDicePaint() {
