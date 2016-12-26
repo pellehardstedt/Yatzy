@@ -12,11 +12,7 @@ function startDicePaint() {
 
 	function reziseDices() {
 
-		if($(window).width() < 389) {
-			$('canvas.dices').attr({height: '40', width: '40'});
-		} else if($(window).width() < 461) {
-			$('canvas.dices').attr({height: '40', width: '40'});
-		} else if($(window).width() < 550) {
+		if($(window).width() < 550) {
 			$('canvas.dices').attr({height: '40', width: '40'});
 		}  else if($(window).width() < 780) {
 			$('canvas.dices').attr({height: '60', width: '60'});
