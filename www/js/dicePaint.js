@@ -12,18 +12,14 @@ function startDicePaint() {
 
 		if($(window).width() < 550) {
 			$('canvas.dices').attr({height: '40', width: '40'});
-			for(var i = 1; i < 6; i++) {
-				paintDiceRoll(theDiceRoll[i-1], ("dice-" + i));
-			}
 		}  else if($(window).width() < 780) {
 			$('canvas.dices').attr({height: '60', width: '60'});
-			for(var i = 1; i < 6; i++) {
-				paintDiceRoll(theDiceRoll[i-1], ("dice-" + i));
-			}
 		} else {
 			$('canvas.dices').attr({height: '70', width: '70'});
+		}
+		if(theDiceRolls.length !== 0 && rollNumber !== 3) {
 			for(var i = 1; i < 6; i++) {
-				paintDiceRoll(theDiceRoll[i-1], ("dice-" + i));
+				paintDiceRoll(theDiceRolls[i-1], ("dice-" + i));
 			}
 		}
 	}

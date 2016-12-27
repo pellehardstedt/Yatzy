@@ -23,6 +23,8 @@ var players = [],
 			if(players){
 				// write the table
 				writeTable();
+				
+				// clear round, rollNumber, dicePaint etc...
 				totalClearOfAll();
 
 				//Highlight the first active player
