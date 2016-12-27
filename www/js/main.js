@@ -56,7 +56,9 @@ $(function(){
 	});
 
 	$('#submit-button').on('click', 'button', function(){
-		submitScore();
+		if($('.score-table .filled-in').length) {
+			submitScore();
+		}
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu
