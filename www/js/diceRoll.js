@@ -3,7 +3,8 @@ var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
 var rollNumber = 3,
-		clearDices;
+		clearDices,
+		totalClearOfAll;
 
 $(startDiceRoll());
 
@@ -40,13 +41,13 @@ function startDiceRoll() {
 	//Locks the dice when you click the lock
 		$('.dice-area').on('click', '.canvas-lock-area', function() {
 		if(rollNumber > 0 && rollNumber < 3) {
-			$(this).find('i').toggleClass('fa-unlock-alt fa-lock');
+			$(this).find('i').toggleClass('fa-unlock fa-lock');
 			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
 		}
 	});
 
 	function clearDicesFunc() {
-		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock-alt fa-lock');
+		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock fa-lock');
 		$('.dice-area').find('.locked').toggleClass('unlocked locked');
 		$('.dice-area').find('.lock-wrapper').hide();
 	}
@@ -93,5 +94,26 @@ function startDiceRoll() {
 			return randomNumber;
 		}
 	}
+
+	function totalClearOfAllFunc () {
+		rollNumber = 3;
+		round = 0;
+		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock fa-lock');
+		$('.dice-area').find('.locked').toggleClass('unlocked locked');
+		$('.dice-area').find('.lock-wrapper').hide();
+		$('.dice-area .roll-number').text(rollNumber);
+
+		for(var i = 1; i < 6; i++) {
+			var canvas = document.getElementById("dice-" + i);
+			var ctx = canvas.getContext("2d");
+
+			var cW = canvas.width;
+			var cH = canvas.height;
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+	}
+
 	clearDices = clearDicesFunc;
+	totalClearOfAll = totalClearOfAllFunc;
 }

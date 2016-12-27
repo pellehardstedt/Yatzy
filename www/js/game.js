@@ -54,7 +54,6 @@ var results,
 		$('#submit-button').slideUp(500);
 
 		clearDices();
-		clearAllDicesCanvas();
 		clearScoreTable();
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
@@ -70,7 +69,7 @@ var results,
 		activePlayer.scoreTotal += results[resultIndex];
 
 		if(activePlayer.scoreBonus >= 63 && activePlayer.bonus === false) {
-			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50);
+			$('.score-table td.player-' + activePlayer.playerNo).eq(7).text(50).addClass('bonus-done');
 			activePlayer.scoreTotal += 50;
 			activePlayer.bonus = true;
 		}
@@ -123,7 +122,7 @@ var results,
 		$('.scoreScreen').fadeOut(700);
 
 
-		round=0;
+		totalClearOfAll();
 	}
 
 	function roundCounter(){

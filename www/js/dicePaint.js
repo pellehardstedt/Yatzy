@@ -1,5 +1,3 @@
-var clearAllDicesCanvas;
-
 $(startDicePaint());
 
 function startDicePaint() {
@@ -12,16 +10,17 @@ function startDicePaint() {
 
 	function reziseDices() {
 
-		if($(window).width() < 389) {
-			$('canvas.dices').attr({height: '40', width: '40'});
-		} else if($(window).width() < 461) {
-			$('canvas.dices').attr({height: '40', width: '40'});
-		} else if($(window).width() < 550) {
+		if($(window).width() < 550) {
 			$('canvas.dices').attr({height: '40', width: '40'});
 		}  else if($(window).width() < 780) {
 			$('canvas.dices').attr({height: '60', width: '60'});
 		} else {
 			$('canvas.dices').attr({height: '70', width: '70'});
+		}
+		if(theDiceRolls.length !== 0 && rollNumber !== 3) {
+			for(var i = 1; i < 6; i++) {
+				paintDiceRoll(theDiceRolls[i-1], ("dice-" + i));
+			}
 		}
 	}
 }
@@ -103,18 +102,4 @@ function paintDiceRoll(roll, canvasID) {
 		ctx.fill();
 		paintFour();
 	}
-
-	function clearAllDicesCanvasFunc() {
-		for(var i = 1; i < 6; i++) {
-			var canvas = document.getElementById("dice-" + i);
-			var ctx = canvas.getContext("2d");
-
-			var cW = canvas.width;
-			var cH = canvas.height;
-
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-		}
-	}
-
-	clearAllDicesCanvas = clearAllDicesCanvasFunc;
 }
