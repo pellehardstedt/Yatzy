@@ -35,6 +35,15 @@ $(function(){
 		message.text('');
 	});
 
+	//event listener for the "Rulla" button.
+	$('.dice-area').on('click', 'button.roll', function() {
+		rollDices(); //calls function in diceRoll.js
+	});
+
+	$('.dice-area').on('click', '.canvas-lock-area', function() {
+		lockDices($(this)); //calls function in diceRoll.js
+	});
+
 	//hide submitbutton at start
 	$('#submit-button').hide();
 
