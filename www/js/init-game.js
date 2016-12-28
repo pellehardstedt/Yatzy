@@ -55,7 +55,8 @@ var players = [],
 					name: playerName,
 					scoreBonus: 0,
 					bonus: false,
-					scoreTotal: 0
+					scoreTotal: 0,
+					bot: false
 				};
 			}
 		});

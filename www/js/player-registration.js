@@ -19,14 +19,16 @@ var removePlayer;
 		// add new player row
 		thisButton.closest('.row').before(
 			'<div class="row player">' +
-			'<div class="col-xs-3">' +
+			'<div class="col-xs-2">' +
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
 			'<div class="col-xs-6 center-block">' +
 			'<input type="text" class="form-control" maxlength="12" id="playerNameInput' + nextPlayerNum + '"' +
 			'placeholder="Namn på spelare ' + nextPlayerNum + '">' +
 			'</div>' +
-			'<div class="col-xs-3">' +
+			'<div class="col-xs-2">' +
+			'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
+			'<div class="col-xs-2">' +
 			'<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>' + '</div>' +
 			'</div>'
 		);

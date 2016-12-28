@@ -12,9 +12,14 @@ $(function(){
 
 	//event listener for the remove button on start menu player form.
 	//calls removePlayer from player-registration.js
-	$('.player-form').on('click', '.player button', function(){
+	$('.player-form').on('click', '.player .btn-danger', function(){
 		var me = $(this);
 		removePlayer(me);
+	});
+
+	$('.player-form').on('click', '.player .btn-info', function(){
+		var me = $(this);
+		me.find('span').toggleClass('glyphicon-user glyphicon-hdd');
 	});
 
 	//event listener for the "Spela!" button. 
