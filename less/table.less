@@ -2,7 +2,11 @@
 	height: 70vh;
 	.score-table{
 		height: 75vh;
-		font-size:13px; 
+		font-size:13px;
+		@media(max-width: 321px) {
+			font-size: 10px;
+		}
+		
 		border: solid black 2px;
 		& > thead > tr > th{
 			font-weight: bold;
