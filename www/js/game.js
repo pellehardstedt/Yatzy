@@ -8,7 +8,7 @@ var nextPlayer,
 	submitScore,
 	scoresForEachCategory,
 	clickTd;
-	
+
 // Global vars
 var results,
 	round = 0;
@@ -115,6 +115,14 @@ var results,
 		}
 	}
 
+	function roundCounter(){
+		round++;
+
+		if (round==15) {
+			winnerScreen();
+		}
+	}
+
 	function endGameFunc(){
 
 		//Remove all the player rows from last registration
@@ -145,16 +153,6 @@ var results,
 
 
 		totalClearOfAll();
-	}
-
-	function roundCounter(){
-		round++;
-
-		if (round==15) {
-			winnerScreen();
-		}
-
-
 	}
 
 	nextPlayer = nextPlayerFunc;
