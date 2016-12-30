@@ -100,13 +100,15 @@ var results,
 		//and add the first one in the row
 		$('.player-form').find('#add').closest('.row').before(
 				'<div class="row player">' +
-				'<div class="col-xs-3">' +
+				'<div class="col-xs-2">' +
 				'<p class="form-label text-right">1.</p>' +
 				'</div>' +
 				'<div class="col-xs-6 center-block">' +
 				'<input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">' +
 				'</div>' +
-				'<div class="col-xs-3">' +
+				'<div class="col-xs-2">' +
+				'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
+				'<div class="col-xs-2">' +
 				'<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>' +
 				'</div>' +
 				'</div>'
