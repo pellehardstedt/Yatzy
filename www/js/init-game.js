@@ -58,6 +58,12 @@ var players = [],
 					scoreTotal: 0,
 					bot: false
 				};
+
+				//if the bot button is set on "BOT" the bot property should be set to the chosen bot type.
+				//AS A PLACEHOLDER ONLY PUTS PROPERTY "bot" TO TRUE! 
+				if( $(this).find('.btn-info').find('span').hasClass('glyphicon-hdd') ){
+					returnArr[i].bot = true;
+				}
 			}
 		});
 
