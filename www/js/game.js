@@ -134,7 +134,7 @@ var results,
 				'<p class="form-label text-right">1.</p>' +
 				'</div>' +
 				'<div class="col-xs-6 center-block">' +
-				'<input type="text" class="form-control" id="playerNameInput1" placeholder="Namn på spelare 1">' +
+				'<input type="text" class="form-control" placeholder="Namn på spelare">' +
 				'</div>' +
 				'<div class="col-xs-2">' +
 				'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +

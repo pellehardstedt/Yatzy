@@ -19,6 +19,9 @@ $(function(){
 
 	$('.player-form').on('click', '.player .btn-info', function(){
 		var me = $(this);
+		// call the function in player-registration.js that insert the selectbox for bot type
+		botHumanSwitch(me);
+
 		me.find('span').toggleClass('glyphicon-user glyphicon-hdd');
 	});
 
