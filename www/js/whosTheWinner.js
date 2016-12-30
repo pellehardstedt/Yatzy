@@ -6,10 +6,10 @@ function playersRanked(){
     //sort to 'playersSorted'
 
     playersSorted.sort(function (b, a) {
-        if (a.score > b.score) {
+        if (a.scoreTotal > b.scoreTotal) {
           return 1;
         }
-        if (a.score < b.score) {
+        if (a.scoreTotal < b.scoreTotal) {
           return -1;
         }
         return 0;

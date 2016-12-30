@@ -6,7 +6,8 @@ var nextPlayer,
 	endGame,
 	updateCategoryScorePreview,
 	submitScore,
-	scoresForEachCategory;
+	scoresForEachCategory,
+	clickTd;
 
 // Global vars
 var results,
@@ -42,6 +43,27 @@ var results,
 				$(this).text(results[i]);
 			}
 		});
+	}
+
+	function clickTdFunc(theTd) {
+		if(
+		rollNumber != 3 //if isn't the first throw
+		&& !theTd.hasClass('no-preview') //if the <td> isn't part of the summa, bonus or total
+		&& !theTd.hasClass('filled-in-perm') //if the <td> hasn't been submitted before before this turn
+		&& theTd.hasClass('player-' + activePlayer.playerNo)) { //if the <td> is the active players <td>
+
+			if(!$('.score-table').find('td').hasClass('filled-in')) { //if a <td> isn't marked this turn
+				theTd.addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			} else if(theTd.hasClass('filled-in')) { //if this <td> is marked this turn
+				theTd.removeClass('filled-in');
+				$('#submit-button').slideUp(500);
+			} else if($('.score-table').find('td').hasClass('filled-in') && !theTd.hasClass('filled-in')) { //if a <td> is marked this turn but it's not the clicked <td>
+				$('.score-table').find('.filled-in').removeClass('filled-in');
+				theTd.addClass('filled-in');
+				$('#submit-button').slideDown(500);
+			}
+		}
 	}
 
 	function submitScoreFunc() {
@@ -93,6 +115,14 @@ var results,
 		}
 	}
 
+	function roundCounter(){
+		round++;
+
+		if (round==15) {
+			winnerScreen();
+		}
+	}
+
 	function endGameFunc(){
 
 		//Remove all the player rows from last registration
@@ -127,19 +157,10 @@ var results,
 		totalClearOfAll();
 	}
 
-	function roundCounter(){
-		round++;
-
-		if (round==15) {
-			winnerScreen();
-		}
-
-
-	}
-
 	nextPlayer = nextPlayerFunc;
 	endGame = endGameFunc;
 	updateCategoryScorePreview = updateCategoryScorePreviewFunc;
 	submitScore = submitScoreFunc;
 	scoresForEachCategory = scoresForEachCategoryFunc;
+	clickTd = clickTdFunc;
 })();

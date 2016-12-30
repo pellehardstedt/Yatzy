@@ -3,7 +3,9 @@ var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
 var rollNumber = 3,
+		rollDices,
 		clearDices,
+		lockDices,
 		totalClearOfAll;
 
 $(startDiceRoll());
@@ -14,7 +16,7 @@ function startDiceRoll() {
 
 	$('.dice-area .roll-number').text(rollNumber);
 
-	$('.dice-area').on('click', 'button.roll', function() {
+	function rollDicesFunc() {
 		if($('.score-table').find('td').hasClass('filled-in')) {
 			alert("Please submit score or remove the marked area in the score table!");
 			return;
@@ -36,15 +38,15 @@ function startDiceRoll() {
 				updateCategoryScorePreview();
 			}, 1400);
 		$('.dice-area .roll-number').text(rollNumber);
-	});
+	}
 
 	//Locks the dice when you click the lock
-		$('.dice-area').on('click', '.canvas-lock-area', function() {
+	function lockDicesFunc(diceClicked) {
 		if(rollNumber > 0 && rollNumber < 3) {
-			$(this).find('i').toggleClass('fa-unlock fa-lock');
-			$(this).find('.lock-wrapper').toggleClass('unlocked locked');
+			diceClicked.find('i').toggleClass('fa-unlock fa-lock');
+			diceClicked.find('.lock-wrapper').toggleClass('unlocked locked');
 		}
-	});
+	}
 
 	function clearDicesFunc() {
 		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock fa-lock');
@@ -114,6 +116,8 @@ function startDiceRoll() {
 		}
 	}
 
+	rollDices = rollDicesFunc;
 	clearDices = clearDicesFunc;
 	totalClearOfAll = totalClearOfAllFunc;
+	lockDices = lockDicesFunc;
 }
