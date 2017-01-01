@@ -43,21 +43,37 @@ var players = [],
 			notRegistered = [];
 
 		$('.player').each(function( i ){
-			var playerName = $(this).find('input').val();
+			//if the player row is a bot row:
+			if( $(this).find('.btn-info').find('span').hasClass('glyphicon-hdd') ){
+				var botName = $(this).find('select').val();
 
-			if(!playerName){
-				var label = $(this).find('input').attr('placeholder');
-				notRegistered.push(label);
-			}
-			else{
 				returnArr[i] = {
 					playerNo: (i),
-					name: playerName,
+					name: botName,
 					scoreBonus: 0,
 					bonus: false,
 					scoreTotal: 0,
-					bot: false
+					bot: true
 				};
+			}
+			else{
+				var playerName = $(this).find('input').val();
+
+				//if the current player input is empty add its placeholder to the notRegistered arr. 
+				if(!playerName){
+					var label = $(this).find('input').attr('placeholder');
+					notRegistered.push(label);
+				}
+				else{
+					returnArr[i] = {
+						playerNo: (i),
+						name: playerName,
+						scoreBonus: 0,
+						bonus: false,
+						scoreTotal: 0,
+						bot: false
+					};
+				}
 			}
 		});
 

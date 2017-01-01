@@ -5,6 +5,7 @@
 // Globals
 var addNewPlayer;
 var removePlayer;
+var botHumanSwitch;
 
 //Self executing function
 (function(){
@@ -23,8 +24,7 @@ var removePlayer;
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
 			'<div class="col-xs-6 center-block">' +
-			'<input type="text" class="form-control" maxlength="12" id="playerNameInput' + nextPlayerNum + '"' +
-			'placeholder="Namn på spelare ' + nextPlayerNum + '">' +
+			'<input type="text" class="form-control" maxlength="12" placeholder="Namn på spelare">' +
 			'</div>' +
 			'<div class="col-xs-2">' +
 			'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
@@ -66,6 +66,29 @@ var removePlayer;
 		}
 	}
 
+	function botHumanSwitchFunc(thisBotButton){
+		var thisPlayerRow = thisBotButton.closest('.player');
+
+		if( thisBotButton.find('span').hasClass('glyphicon-user') ){
+
+			thisPlayerRow.find('input').remove();
+			thisPlayerRow.find('.center-block').append(
+				'<select class="form-control">' +
+					'<option value="Otålige Ove">Otålige Ove</option>' +
+					'<option value="Bodil Bonus">Bodil Bonus</option>' +
+					'<option value="Yatzy Jägarn">Yatzy Jägarn</option>' +
+					'<option value="Sluge Rickard">Sluge Rickard</option>' +
+				'</select>'
+			);
+		}
+		else{
+			thisPlayerRow.find('select').remove();
+			thisPlayerRow.find('.center-block').append(
+				'<input type="text" class="form-control" maxlength="12" placeholder="Namn på spelare">'
+			);
+		}
+	}
+
 	// updates player numbers after deleting a row.
 	function updatePlayerForm(){
 		var thisPlayer;
@@ -82,5 +105,6 @@ var removePlayer;
 	// Assign addNewPlayerFunc to global variable.
 	addNewPlayer = addNewPlayerFunc;
 	removePlayer = removePlayerFunc;
+	botHumanSwitch = botHumanSwitchFunc;
 
 })();

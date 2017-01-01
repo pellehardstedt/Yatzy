@@ -3,6 +3,10 @@ $(function(){
 	
 	//EVENT LISTENERS
 
+	$('.player-form').on('change', 'select', function(){
+		console.log($(this).val());
+	});
+
 	//event listener for the add new player button on start menu player form. 
 	//calls addNewPlayer from player-registration.js
 	$('.player-form').find('.row:last').on('click','button', function(){
@@ -19,6 +23,9 @@ $(function(){
 
 	$('.player-form').on('click', '.player .btn-info', function(){
 		var me = $(this);
+		// call the function in player-registration.js that insert the selectbox for bot type
+		botHumanSwitch(me);
+
 		me.find('span').toggleClass('glyphicon-user glyphicon-hdd');
 	});
 
