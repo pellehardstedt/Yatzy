@@ -67,7 +67,6 @@ var botHumanSwitch;
 	}
 
 	function botHumanSwitchFunc(thisBotButton){
-		console.log(thisBotButton);
 		var thisPlayerRow = thisBotButton.closest('.player');
 
 		if( thisBotButton.find('span').hasClass('glyphicon-user') ){
@@ -75,10 +74,10 @@ var botHumanSwitch;
 			thisPlayerRow.find('input').remove();
 			thisPlayerRow.find('.center-block').append(
 				'<select class="form-control">' +
-					'<option>Otålige Ove</option>' +
-					'<option>Bodil Bonus</option>' +
-					'<option>Yatzy Jägarn</option>' +
-					'<option>Sluge Rickard</option>' +
+					'<option value="Otålige Ove">Otålige Ove</option>' +
+					'<option value="Bodil Bonus">Bodil Bonus</option>' +
+					'<option value="Yatzy Jägarn">Yatzy Jägarn</option>' +
+					'<option value="Sluge Rickard">Sluge Rickard</option>' +
 				'</select>'
 			);
 		}
