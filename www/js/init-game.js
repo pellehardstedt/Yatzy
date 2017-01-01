@@ -19,6 +19,10 @@ var players = [],
 		//Assign first player to activePlayer variable
 		if(players){
 			activePlayer = players[0];
+			//if first player is a bot, initiate the bots turn
+			if(activePlayer.bot){
+				runBot(activePlayer.name);
+			}
 		
 			if(players){
 				// write the table

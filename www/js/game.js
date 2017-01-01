@@ -108,9 +108,15 @@ var results,
 
 		if(players[nextPlayerIndex]){
 			activePlayer = players[nextPlayerIndex];
+			if(activePlayer.bot === true){
+				runBot(activePlayer.name);
+			}
 		}
 		else{
 			activePlayer = players[0];
+			if(activePlayer.bot === true){
+				runBot(activePlayer.name);
+			}
 			roundCounter(round);
 		}
 	}
