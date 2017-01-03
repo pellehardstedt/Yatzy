@@ -91,9 +91,9 @@ var players = [],
 			returnArr.forEach(function (activePlayerObject) {
 
 				returnArr.forEach(function (otherPlayerObject) {
-					if(otherPlayerObject.name === activePlayerObject.name && otherPlayerObject.playerNo != activePlayerObject.playerNo) {
-						otherPlayerObject.name = otherPlayerObject.name + '+';
-					}
+					// if(otherPlayerObject.name === activePlayerObject.name && otherPlayerObject.playerNo != activePlayerObject.playerNo) {
+					// 	otherPlayerObject.name = otherPlayerObject.name + '+';
+					// }
 				});
 			});
 			return returnArr;

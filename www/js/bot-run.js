@@ -2,8 +2,10 @@
 function runBot(botPersonality) {
 	console.log(botPersonality);
 
+	//make the first dice roll.
 	rollDices();
 
+	//hand over analysis to the correct bot-personality.
 	switch(botPersonality){
 		case "Otålige Ove":
 			runBotOO();

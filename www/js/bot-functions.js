@@ -18,7 +18,8 @@ function findMax(resultsArray){
 	return returnObj;
 }
 
-//finds the highest value that is not allready filled in by the active player. Returns a td jquery object
+//finds the highest value that is not allready filled in by the active player. Returns a td jquery object.
+//if max is 0 it returns the 
 function findMaxOfAvailable(resultsArray){
 	var greenLight = false;
 	var bestResultObj;
@@ -30,6 +31,12 @@ function findMaxOfAvailable(resultsArray){
 	while(greenLight === false){
 		//find the highest result in array
 		bestResultObj = findMax(resultsArray);
+
+		//if the best available result is zero. Return an integer with value of 0 to the bot so it can handle
+		//the 0 score according to bot preferences. 
+		if(bestResultObj.result === 0){
+			return 0;
+		}
 
 		//dev
 		console.log(bestResultObj.index);
@@ -51,7 +58,7 @@ function findMaxOfAvailable(resultsArray){
 
 		//if the best result is allready filled in. Set it to 0 and find max again.
 		if( td.hasClass('filled-in-perm') ){
-			results[index] = 0;
+			resultsArray[index] = 0;
 		}
 		else{
 			return td;
