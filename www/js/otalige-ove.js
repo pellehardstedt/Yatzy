@@ -20,8 +20,7 @@ var runBotOO;
 			}
 		}
 
-		clickTd(tdToScore);
-		setTimeout(submitScore, 3000);
+		return tdToScore;
 	}
 
 	runBotOO = runBotOOfunc;
