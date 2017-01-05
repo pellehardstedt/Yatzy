@@ -5,7 +5,7 @@ function findMax(resultsArray){
 	var length = resultsArray.length;
 	var returnObj = {};
 
-	for(i = 0; i <= length-1; i++){
+	for(var i = 0; i <= length-1; i++){
 		if(resultsArray[i] > max){
 			max = resultsArray[i];
 			indexOfMax = i;

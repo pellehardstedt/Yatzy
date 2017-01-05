@@ -17,6 +17,6 @@ function runBot(botPersonality) {
 
 //this function is called from the bots own js file when it is ready to submit. 
 function submitFunction(tdToScore){
-	setTimeout(clickTd, 1000, tdToScore);
-	setTimeout(submitScore, 2000);
+	setTimeout(clickTd, 2000, tdToScore);
+	setTimeout(submitScore, 3000);
 }
