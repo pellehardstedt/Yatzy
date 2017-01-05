@@ -45,6 +45,7 @@ $(function(){
 	//event listener for the "Rulla" button.
 	$('.dice-area').on('click', 'button.roll', function() {
 		rollDices(); //calls function in diceRoll.js
+		$(this).blur();
 	});
 
 	$('.dice-area').on('click', '.canvas-lock-area', function() {

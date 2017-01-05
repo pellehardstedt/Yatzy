@@ -10,10 +10,13 @@ function runBot(botPersonality) {
 	//hand over analysis to the correct bot-personality.
 	switch(botPersonality){
 		case "Otålige Ove":
-			tdPickedByBot = runBotOO();
+			runBotOO();
 			break;
 	}
+}
 
-	setTimeout(clickTd, 2000, tdPickedByBot);
-	setTimeout(submitScore, 3000);
+//this function is called from the bots own js file when it is ready to submit. 
+function submitFunction(tdToScore){
+	setTimeout(clickTd, 1000, tdToScore);
+	setTimeout(submitScore, 2000);
 }
