@@ -5,8 +5,6 @@ var runBotOO;
 	function runBotOOfunc(){
 		var tdToScore;
 
-		console.log(results);
-
 		tdToScore = findMaxOfAvailable(results);
 
 		// If Otålige Ove has only 0s after his first roll, he will roll one more time. 

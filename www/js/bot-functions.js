@@ -38,10 +38,6 @@ function findMaxOfAvailable(resultsArray){
 			return 0;
 		}
 
-		//dev
-		console.log(bestResultObj.index);
-		console.log(bestResultObj.result);
-
 		index = bestResultObj.index;
 		result = bestResultObj.result;
 

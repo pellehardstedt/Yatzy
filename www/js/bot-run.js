@@ -1,6 +1,5 @@
 //Main bot area where you can call the functions from bot-functions.js
 function runBot(botPersonality) {
-	console.log(botPersonality);
 
 	//var that contains the td that the bot decided to pick
 	var tdPickedByBot;
@@ -15,6 +14,6 @@ function runBot(botPersonality) {
 			break;
 	}
 
-	clickTd(tdPickedByBot);
+	setTimeout(clickTd, 2000, tdPickedByBot);
 	setTimeout(submitScore, 3000);
 }
