@@ -85,7 +85,7 @@ function startDiceRoll() {
 					}, activeTimesToRoll);
 					activeTimesToRoll -= 100;
 					first = false;
-			  })();
+				})();
 			}
 		}
 
