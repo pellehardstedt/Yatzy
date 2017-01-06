@@ -1,5 +1,7 @@
 //Main bot area where you can call the functions from bot-functions.js
 function runBot(botPersonality) {
+	//block input from human players when it's the bots turn
+	toggleInputBlockScreen();
 
 	//var that contains the td that the bot decided to pick
 	var tdPickedByBot;
@@ -19,4 +21,20 @@ function runBot(botPersonality) {
 function submitFunction(tdToScore){
 	setTimeout(clickTd, 2000, tdToScore);
 	setTimeout(submitScore, 3000);
+
+	setTimeout(toggleInputBlockScreen, 3001);
+}
+
+//toggles the blockscreen 
+function toggleInputBlockScreen(){
+	var blockScreen = $('.input-block-screen');
+
+	if ( blockScreen.is(":visible") ){
+		alert('hide');
+		blockScreen.hide();
+	}
+	else{
+		alert('show');
+		blockScreen.show();
+	}
 }
