@@ -136,7 +136,7 @@ var results,
 		//and add the first one in the row
 		$('.player-form').find('#add').closest('.row').before(
 			'<div class="row player">' +
-			'<div class="col-xs-2">' +
+			'<div class="col-xs-1">' +
 			'<p class="form-label text-right">1.</p>' +
 			'</div>' +
 			'<div class="col-xs-6 center-block">' +
