@@ -79,7 +79,13 @@ var results,
 		clearScoreTable();
 		rollNumber = 3;
 		$('.dice-area .roll-number').text(rollNumber);
-		nextPlayer();
+		
+		roundCounter();
+
+		//if it is not the last round pass the turn to the next player.
+		if(round < 15){
+			nextPlayer();
+		}
 	}
 
 	function totalCalcScore(resultIndex) {
@@ -117,7 +123,6 @@ var results,
 			if(activePlayer.bot === true){
 				runBot(activePlayer.name);
 			}
-			roundCounter(round);
 		}
 	}
 
@@ -159,6 +164,8 @@ var results,
 		$('.game-screen-wrapper').hide();
 		$('.scoreScreen').fadeOut(700);
 
+		//empty player object
+		players = [];
 
 		totalClearOfAll();
 	}
