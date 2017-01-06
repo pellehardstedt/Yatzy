@@ -20,7 +20,7 @@ var botHumanSwitch;
 		// add new player row
 		thisButton.closest('.row').before(
 			'<div class="row player">' +
-			'<div class="col-xs-2">' +
+			'<div class="col-xs-1">' +
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
 			'<div class="col-xs-6 center-block">' +
