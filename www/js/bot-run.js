@@ -6,6 +6,12 @@ function runBot(botPersonality) {
 	//var that contains the td that the bot decided to pick
 	var tdPickedByBot;
 
+	$('button.roll').addClass('pushed-button');
+
+	setTimeout(function() {
+		$('button.roll').removeClass('pushed-button');
+	}, 300);
+
 	//make the first dice roll.
 	rollDices();
 
