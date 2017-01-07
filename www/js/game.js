@@ -75,17 +75,7 @@ var results,
 		$('.score-table').find('.filled-in').removeClass('filled-in').addClass('filled-in-perm');
 		$('#submit-button').slideUp(500);
 
-		clearDices();
-		clearScoreTable();
-		rollNumber = 3;
-		$('.dice-area .roll-number').text(rollNumber);
-		
-		roundCounter();
-
-		//if it is not the last round pass the turn to the next player.
-		if(round < 15){
-			nextPlayer();
-		}
+		nextPlayer();
 	}
 
 	function totalCalcScore(resultIndex) {
@@ -110,26 +100,36 @@ var results,
 	function nextPlayerFunc(){
 		var nextPlayerIndex = (activePlayer.playerNo + 1);
 
+		clearDices();
+		clearScoreTable();
+		rollNumber = 3;
+		$('.dice-area .roll-number').text(rollNumber);
+
 		highlightNext(nextPlayerIndex);
 
 		if(players[nextPlayerIndex]){
 			activePlayer = players[nextPlayerIndex];
-			if(activePlayer.bot === true){
-				runBot(activePlayer.name);
-			}
-		}
-		else{
+		} else{
+
+			//+1 to round if it's the last player that had done the move
+			roundCounter();
+			
 			activePlayer = players[0];
+		}
+
+		//if the player is a bot run the function runBot with that bot personality
+		if(round <= 14){
 			if(activePlayer.bot === true){
 				runBot(activePlayer.name);
 			}
 		}
+
 	}
 
 	function roundCounter(){
 		round++;
 
-		if (round==15) {
+		if(round === 15) {
 			winnerScreen();
 		}
 	}
