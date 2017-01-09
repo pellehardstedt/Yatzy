@@ -34,8 +34,11 @@ var runBotSS;
 	function	whatToDoNextCalc(){
 
 		var botDecideObject = {
-			doneTdList: []
-		},
+			straight: []
+		}
+
+		var chances = Array.apply(null, Array(15)).map(function () {});
+
 		dicesSorted = theDiceRolls.slice();
 
     dicesSorted.sort(function (b, a) {
@@ -53,32 +56,91 @@ var runBotSS;
 			.not('.no-preview')
 			.each(function(index) {
 				if($(this).hasClass('filled-in-perm')) {
-					botDecideObject.doneTdList.push(index);
+					chances[index] = 'done';
 				}
 			});
 
+		var existingPair = 0;
+		var wasOrIsThreeOrMore = false;
+
 		dicesSorted.forEach(function(diceRoll, index) {
 
-			for(var i = index; i < 5; i++) {
+			if(diceRoll !== 1 && diceRoll !== 6 && $.inArray(diceRoll, botDecideObject.straight) < 0) {
+				botDecideObject.straight.push(diceRoll);
+			}
 
-				//$.inArray(14, botDecideObject.doneTdList)
+			if(index === 4) {
 
-				if(diceRoll === dicesSorted[i+1]) {
-					if(i+1 === 4 && $.inArray(14, botDecideObject.doneTdList) < 0) {
-						//return td position 14 (yatzy)
-					}	else if(i+1 === 3) {
-						//fyrtal av diceRoll
-						if(rollNumber === 0 && diceRoll <= 3 && $.inArray(diceRoll+1, botDecideObject.doneTdList) < 0) {
-							//retunera diceRoll+1 som td index (fyrtal av övre bonus delen)
-						} else if($.inArray(14, botDecideObject.doneTdList) < 0) {
-							//aim for yatzy
+				var straightLength = botDecideObject.straight.length;
+
+				console.log(straightLength);
+
+				if(chances[10] !== 'done') {
+					if($.inArray(1, dicesSorted) >= 0) {
+						chances[10] = Math.pow(1/6, 4 - straightLength);
+					} else {
+						chances[10] = Math.pow(1/6, 5 - straightLength);
+					}
+				}
+
+				if(chances[11] !== 'done') {
+					if($.inArray(6, dicesSorted) >= 0) {
+						chances[11] = Math.pow(1/6, 4 - straightLength);
+					} else {
+						chances[11] = Math.pow(1/6, 5 - straightLength);
+					}
+				}
+			}
+
+			for(var i = 4; i > index; i--) {
+
+				if(diceRoll === dicesSorted[i]) {
+
+					var numberOfSame = (i - index + 1);
+
+					chances[6] = 1;
+
+					if(diceRoll !== existingPair && existingPair !== 0) {
+						chances[7] = 1;
+						if(wasOrIsThreeOrMore === true) {
+							chances[12] = 1;
 						}
-					} else if(i+1 === 2) {
-						//only have 1 pair what we know
+					} else if(existingPair === 0) {
+						existingPair = diceRoll;
+						if(numberOfSame >= 3) {
+							wasOrIsThreeOrMore = true;
+							chances[6] = 1;
+						}
+					}
+
+					if(numberOfSame === 5 && chances[14] !== 'done') {
+						chances[14] = 1;
+					}
+
+					if(chances[diceRoll-1] !== 'done') {
+						chances[diceRoll-1] = Math.pow(1/6, 5 - numberOfSame); //Not sure if this should be changed if you have x score in the bucket
+					}
+
+					if(chances[6] !== 'done') {
+						chances[6] = 1;
+					}
+				} else {
+					if(chances[6] == false) {
+						chances[6] = 4/6;
+					}
+					if(chances[7] == false) {
+						chances[7] = 4/6*3/6*2/6; //Chance for two pairs
+					}
+					if(chances[8] == false) {
+						chances[8] = 4/6*3/6; //Chance for threeOfAKind
+					}
+					if(chances[9] == false) {
+						chances[9] = 4/6*3/6*2/6*1/6; //Chance for fourOfAKind
 					}
 				}
 			}
 		});
+		console.log(chances);
 	}
 
 	function rollAgain(){
