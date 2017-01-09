@@ -30,11 +30,9 @@ function toggleInputBlockScreen(){
 	var blockScreen = $('.input-block-screen');
 
 	if ( blockScreen.is(":visible") ){
-		alert('hide');
 		blockScreen.hide();
 	}
 	else{
-		alert('show');
 		blockScreen.show();
 	}
 }
