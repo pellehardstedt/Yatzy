@@ -6,6 +6,15 @@ function runBot(botPersonality) {
 	//var that contains the td that the bot decided to pick
 	var tdPickedByBot;
 
+	//adds a class to the button for a short time to illustrate a push from the bot
+	setTimeout(function() {
+		$('button.roll').addClass('pushed-button');
+	}, 50);
+
+	setTimeout(function() {
+		$('button.roll').removeClass('pushed-button');
+	}, 200);
+
 	//make the first dice roll.
 	rollDices();
 
@@ -20,6 +29,16 @@ function runBot(botPersonality) {
 //this function is called from the bots own js file when it is ready to submit. 
 function submitFunction(tdToScore){
 	setTimeout(clickTd, 2000, tdToScore);
+
+	//adds a class to the button for a short time to illustrate a push from the bot
+	setTimeout(function() {
+		$('#submit-button button').addClass('pushed-button');
+	}, 2750);
+
+	setTimeout(function() {
+		$('#submit-button button').removeClass('pushed-button');
+	}, 2900);
+
 	setTimeout(submitScore, 3000);
 
 	setTimeout(toggleInputBlockScreen, 3001);

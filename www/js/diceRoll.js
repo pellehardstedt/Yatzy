@@ -97,7 +97,7 @@ function startDiceRoll() {
 		}
 	}
 
-	function totalClearOfAllFunc () {
+	function totalClearOfAllFunc() {
 		rollNumber = 3;
 		round = 0;
 		$('.dice-area').find('.fa-lock').toggleClass('fa-unlock fa-lock');
