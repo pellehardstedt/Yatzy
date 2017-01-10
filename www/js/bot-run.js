@@ -23,6 +23,9 @@ function runBot(botPersonality) {
 		case "Otålige Ove":
 			runBotOO();
 			break;
+		case "Strategiska Sten":
+			runBotSS();
+			break;
 	}
 }
 
