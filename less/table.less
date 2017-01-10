@@ -2,35 +2,36 @@
 	height: 70vh;
 	.score-table{
 		height: 75vh;
-		font-size:13px;
+		font-size:15px;
+		font-family: 'Dosis', sans-serif;
 		@media(max-width: 321px) {
 			font-size: 10px;
 		}
 		@media(max-height: 481px) {
 			font-size: 6px;
+			font-family: 'Dosis', sans-serif;
 		}
 		@media(max-height: 600px) {
 			font-size: 10px;
+			font-family: 'Dosis', sans-serif;
 		}
-		
-		border: solid black 2px;
 		& > thead > tr > th{
 			font-weight: bold;
-			border-right: solid black 1px;
-			border-bottom: solid black 2px;
+			border-right: solid #adadad 1px;
+			border-bottom: solid #c5c5c5 2px;
 			padding-bottom: 2px;
 		}
 
 		& > tbody > tr > td {
 			height:10px;
-			border-right: solid black 1px;
-			border-bottom: solid black 1px;
+			border-right: solid #adadad 1px;
+			border-bottom: solid #adadad 1px;
 			width: 80px;
 			padding:2px;
 		}
 
 		.sum, .total, .bonus{
-			background-color: lightgray;
+			background-color: #F7E4A2;
 			border: 2px solid black;
 		}
 
@@ -51,21 +52,24 @@
 			}
 
 			&.no-preview{
-				color: green;
+				color: #85A56D;
 			}
 			&.filled-in{
 				font-weight: bold;
-				background-color: lightgreen;
+				background-color: #A7BD5B;
 				color: black;
 			}
 			&.filled-in-perm{
-				background-color: lightblue;
+				background-color: #8DC7B8;
 				color: black;
 			}
 			&.bonus-done{
-				background-color: lightblue;
+				background-color: #8DC7B8;
 			}
 		}
+	}
+	& .table{
+		border: 2px solid lightgray;
 	}
 }
 

@@ -37,11 +37,11 @@
 
             <!-- 1 row for player registration-->
             <div class="row player">
-              <div class="col-xs-1">
+              <div class="col-xs-2">
                 <p class="form-label text-right">1.</p>
               </div>
-              <div class="col-xs-6 center-block">
-                <input type="text" class="form-control" placeholder="Namn på spelare" maxlength="12">
+              <div class="col-xs-5 center-block">
+                <input type="text" class="form-control" maxlength="12" placeholder="Spelarnamn" >
               </div>
               <div class="col-xs-2">
                 <button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button>
@@ -105,14 +105,7 @@
             <div class="col-xs-6 col-sm-8">
               <h2 class="game-logo">Yatzy</h2>
             </div>
-            <!-- submit button -->
-            <div class="col-xs-3 col-sm-2">
-              <div id="submit-button">
-                <button class="btn btn-default submit-button visible-xs">Välj</button>
-                <button class="btn btn-default submit-button btn-lg hidden-xs btn-block">Välj</button>
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-2">
+            <div class="col-xs-3 col-xs-offset-3 col-sm-2 col-sm-offset-2">
               <button class="btn btn-default menu-button visible-xs" data-toggle="modal" data-target="#inGameMeny">Meny</button>
               <button class="btn btn-default btn-lg menu-button hidden-xs btn-block" data-toggle="modal" data-target="#inGameMeny">Meny</button>
             </div>
@@ -168,10 +161,10 @@
                   <td class="category-name">Fyrtal</td>
                 </tr>
                 <tr class="small-straight">
-                  <td class="category-name">Liten stege</td>
+                  <td class="category-name">L. stege</td>
                 </tr>
                 <tr class="large-straight">
-                  <td class="category-name">Stor stege</td>
+                  <td class="category-name">S. stege</td>
                 </tr>
                 <tr class="full-house">
                   <td class="category-name">Kåk</td>
@@ -226,6 +219,15 @@
       </div>
 
     </div><!-- ends container-fluid game-screen-wrapper -->
+
+    <!-- TOOLTIPS -->
+
+    <!-- Confirms selection tooltip -->
+    <div class="confirm-tooltip">
+      <p>Är du säker?</p>
+      <button class="btn btn-success">Ja</button>
+      <button class="btn btn-danger">Nej</button>
+    </div>
 
     <!-- MODALS -->
     
@@ -362,48 +364,7 @@
         </div>
       </div>
     </div>
-
-
-
-    <!--
-          <div class="modal-body">
-
-            <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
-                <button data-toggle="modal" data-target="#regelblad-modal" class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">
-                  Regelblad
-                </button>
-                <div class="vertical-spacer-m"></div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
-                <button data-toggle="modal" data-target="#highscore-modal" class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer">
-                  Highscore
-                </button>
-                <div class="vertical-spacer-m"></div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
-                <button class="btn btn-primary btn-block btn-lg center-block button-vertical-spacer end-game">Avsluta spel</button>
-                <div class="vertical-spacer-m"></div>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal">Fortsätt spela!</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     
-
     <!-- SCORESCREEN -->
     <div class="container">
       <div class="row">

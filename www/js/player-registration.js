@@ -20,11 +20,11 @@ var botHumanSwitch;
 		// add new player row
 		thisButton.closest('.row').before(
 			'<div class="row player">' +
-			'<div class="col-xs-1">' +
+			'<div class="col-xs-2">' +
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
-			'<div class="col-xs-6 center-block">' +
-			'<input type="text" class="form-control" maxlength="12" placeholder="Namn på spelare">' +
+			'<div class="col-xs-5 center-block">' +
+			'<input type="text" class="form-control" maxlength="12" placeholder="Spelarnamn">' +
 			'</div>' +
 			'<div class="col-xs-2">' +
 			'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
@@ -84,7 +84,7 @@ var botHumanSwitch;
 		else{
 			thisPlayerRow.find('select').remove();
 			thisPlayerRow.find('.center-block').append(
-				'<input type="text" class="form-control" maxlength="12" placeholder="Namn på spelare">'
+				'<input type="text" class="form-control" maxlength="12" placeholder="Spelarnamn">'
 			);
 		}
 	}
@@ -98,7 +98,7 @@ var botHumanSwitch;
 
 			thisPlayer.find('.form-label').text( i+1+'.');
 			thisPlayer.find('input').attr('id', 'playerNameInput' + (i+1));
-			thisPlayer.find('input').attr('placeholder', 'Namn på spelare ' + (i+1));
+			
 		});
 	}
 

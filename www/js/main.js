@@ -52,18 +52,41 @@ $(function(){
 		lockDices($(this)); //calls function in diceRoll.js
 	});
 
-	//hide submitbutton at start
-	$('#submit-button').hide();
-
 	//event listener for when user clicks on a td cell to fill in a score
-	$('.score-table').on('click', 'td', function(){
-		clickTd($(this));
+	$('.score-table').on('click', 'td', function(event){
+		var thisTd = $(this);
+
+		clickTd(thisTd);
+
+		if( thisTd.hasClass('player-' + activePlayer.playerNo) && rollNumber < 3 ){
+
+			//coordinates
+			xPos = event.pageX;
+			yPos = event.pageY;
+
+			//
+			if(xPos > 260){
+				xPos = xPos - 100;
+			}
+
+			//position and show the confirm tooltip
+			console.log("x" , xPos);
+			$('.confirm-tooltip').css( {"top" : yPos, "left" : xPos});
+			$('.confirm-tooltip').show();
+		}
+
 	});
 
-	$('#submit-button').on('click', 'button', function(){
+	$('.confirm-tooltip').on('click', '.btn-success', function(){
 		if($('.score-table .filled-in').length) {
 			submitScore();
+			$('.confirm-tooltip').hide();
 		}
+	});
+
+	$('.confirm-tooltip').on('click', '.btn-danger', function(){
+		$('.score-table .filled-in').removeClass('filled-in');
+		$('.confirm-tooltip').hide();
 	});
 
 	//event listener for "avsluta spel" button on the in game modal menu
