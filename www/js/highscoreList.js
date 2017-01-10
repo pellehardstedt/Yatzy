@@ -18,9 +18,16 @@ function highscoreList(resultArray){
 $('body').on('click', '.highscore-button', function(){
   //clear modal so that list dont duplicates when closing and opening.
   $('.modal-body-highscore tbody').empty();
-  highscoreList(players);
-  //for each element in 'result'
-  highscore.forEach(function(player, i){
-    $('.modal-tbody-highscore').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.scoreTotal + '</td></tr>');
-  });
+  var highscorePrint = JSON.parse(localStorage.getItem("highscore"));
+  //if the stored highscore isnt empty
+  if (highscorePrint !== null){
+    //for each highscore position
+    highscorePrint.forEach(function(player, i){
+      $('.modal-tbody-highscore').append('<tr><td>' + (i+1) +'</td><td>'+ player.name + '</td><td>' + player.scoreTotal + '</td></tr>');
+    });
+  }
+  //if the highscore is empty, print this instead
+  else{
+    $('.modal-tbody-highscore').append('<tr><td>Ingen highscore sparad</td></tr>');
+  }
 });
