@@ -141,11 +141,11 @@ var results,
 		//and add the first one in the row
 		$('.player-form').find('#add').closest('.row').before(
 			'<div class="row player">' +
-			'<div class="col-xs-1">' +
+			'<div class="col-xs-2">' +
 			'<p class="form-label text-right">1.</p>' +
 			'</div>' +
-			'<div class="col-xs-6 center-block">' +
-			'<input type="text" class="form-control" placeholder="Namn på spelare">' +
+			'<div class="col-xs-5 center-block">' +
+			'<input type="text" class="form-control" maxlength="12" placeholder="Spelarnamn">' +
 			'</div>' +
 			'<div class="col-xs-2">' +
 			'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
@@ -167,6 +167,10 @@ var results,
 		//empty player object
 		players = [];
 
+		//Reset player row add button
+		$('.player-form').find('.row:last').find('button').prop('disabled', false);
+
+		//Reset a lot of gamesettings
 		totalClearOfAll();
 	}
 

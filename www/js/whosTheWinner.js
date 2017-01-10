@@ -20,7 +20,7 @@ function storeScore(){
     var parsedHighscore = JSON.parse(localStorage.getItem("highscore"));
     //for each player
     playersSorted.forEach(function(playerActive, i){
-      //bool for checking if the current player is placed
+      //variable for checking if the current player is placed
       var playerPlaced = 0;
       //if the parsed (stored) highscore is not empty
       if(parsedHighscore !== null){
@@ -38,7 +38,7 @@ function storeScore(){
             }
           });
         //limit parsedHighscore to top 10
-        parsedHighscore.slice(0,10);
+        parsedHighscore = parsedHighscore.slice(0,10);
         //Use parsedHighscore to update global array 'highscore'
         highscore = parsedHighscore;
       }
