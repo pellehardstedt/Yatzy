@@ -21,22 +21,24 @@ function storeScore(){
     //for each player
     playersSorted.forEach(function(playerActive, i){
       //variable for checking if the current player is placed
-      var playerPlaced = 0;
+      var playerPlaced = false;
       //if the parsed (stored) highscore is not empty
       if(parsedHighscore !== null){
           //check with each highscore-position
           parsedHighscore.forEach(function(playerHighscore, i){
-            if(playerActive.scoreTotal > playerHighscore.scoreTotal &&  playerPlaced===0){
-              playerPlaced = 1;
+            if(playerActive.scoreTotal > playerHighscore.scoreTotal &&  playerPlaced===false){
+              playerPlaced = true;
                 //replace position with current player
                 parsedHighscore.splice(i, 0, playerActive);
-                console.log("position " + i + " replaced by " + playerActive.name);
                 if(parsedHighscore.length>=11){
                   parsedHighscore.pop();
                 }
                 return;
             }
           });
+          if(playerPlaced===false){
+            parsedHighscore.push(playerActive);
+          }
         //limit parsedHighscore to top 10
         parsedHighscore = parsedHighscore.slice(0,10);
         //Use parsedHighscore to update global array 'highscore'
