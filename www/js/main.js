@@ -56,6 +56,7 @@ $(function(){
 	$('.score-table').on('click', 'td', function(event){
 		var thisTd = $(this);
 
+		//Send the td clicked to the clickTd function
 		clickTd(thisTd);
 
 		if( thisTd.hasClass('player-' + activePlayer.playerNo) && rollNumber < 3 ){
@@ -70,8 +71,7 @@ $(function(){
 			}
 
 			//position and show the confirm tooltip
-			console.log("x" , xPos);
-			$('.confirm-tooltip').css( {"top" : yPos, "left" : xPos});
+			$('.confirm-tooltip').css( {"top" : yPos, "left" : xPos} );
 			$('.confirm-tooltip').show();
 		}
 
