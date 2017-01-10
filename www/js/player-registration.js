@@ -98,7 +98,7 @@ var botHumanSwitch;
 
 			thisPlayer.find('.form-label').text( i+1+'.');
 			thisPlayer.find('input').attr('id', 'playerNameInput' + (i+1));
-			thisPlayer.find('input').attr('placeholder', 'Namn på spelare ' + (i+1));
+			
 		});
 	}
 
