@@ -15,35 +15,37 @@ function playersRanked(){
         return 0;
     });
 }
-
-
 //insert 'playersSorted' from the prior function
 function storeScore(){
-
     var parsedHighscore = JSON.parse(localStorage.getItem("highscore"));
-
     //for each player
     playersSorted.forEach(function(playerActive, i){
-      //check with each highscore-position
+      //bool for checking if the current player is placed
+      var playerPlaced = 0;
+      //if the parsed (stored) highscore is not empty
       if(parsedHighscore !== null){
+          //check with each highscore-position
           parsedHighscore.forEach(function(playerHighscore, i){
-              if(playerActive.scoreTotal > playerHighscore.scoreTotal){
-                  //replace position with current player
-                  parsedHighscore.splice(i, 0, playerActive);
-                  if(parsedHighscore.length>=10){
-                    parsedHighscore.pop();
-                  }
-                  return;
-              }
+            if(playerActive.scoreTotal > playerHighscore.scoreTotal &&  playerPlaced===0){
+              playerPlaced = 1;
+                //replace position with current player
+                parsedHighscore.splice(i, 0, playerActive);
+                console.log("position " + i + " replaced by " + playerActive.name);
+                if(parsedHighscore.length>=11){
+                  parsedHighscore.pop();
+                }
+                return;
+            }
           });
-        //Use parsedHighscore to update global array 'highscore'    
+        //limit parsedHighscore to top 10
+        parsedHighscore.slice(0,10);
+        //Use parsedHighscore to update global array 'highscore'
         highscore = parsedHighscore;
       }
       else {
         highscore.push(playerActive);
       }
     });
-    
     //stringify parsedHighscore to update the localStorage-highscore
     localStorage.setItem("highscore", JSON.stringify(highscore));
 }
@@ -116,6 +118,3 @@ function storeScore(){
 
 //declaring the array to be sorted and placing player objects in it. should be a global variable.
 var highscore = [];
-
-
-
