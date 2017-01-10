@@ -24,7 +24,7 @@ var botHumanSwitch;
 			'<p class="form-label text-right">' + nextPlayerNum + '.</p>' +
 			'</div>' +
 			'<div class="col-xs-5 center-block">' +
-			'<input type="text" class="form-control" maxlength="7" placeholder="Spelarnamn">' +
+			'<input type="text" class="form-control" maxlength="12" placeholder="Spelarnamn">' +
 			'</div>' +
 			'<div class="col-xs-2">' +
 			'<button class="btn btn-info"><span class="glyphicon glyphicon-user"></span></button></div>' +
