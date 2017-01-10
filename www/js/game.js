@@ -167,6 +167,10 @@ var results,
 		//empty player object
 		players = [];
 
+		//Reset player row add button
+		$('.player-form').find('.row:last').find('button').prop('disabled', false);
+
+		//Reset a lot of gamesettings
 		totalClearOfAll();
 	}
 
