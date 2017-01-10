@@ -52,9 +52,6 @@ $(function(){
 		lockDices($(this)); //calls function in diceRoll.js
 	});
 
-	//hide submitbutton at start
-	// $('#submit-button').hide();
-
 	//event listener for when user clicks on a td cell to fill in a score
 	$('.score-table').on('click', 'td', function(event){
 		var thisTd = $(this);
