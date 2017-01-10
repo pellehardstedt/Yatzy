@@ -35,7 +35,7 @@ var runBotSS;
 
 		var botDecideObject = {
 			straight: []
-		},
+		}
 
 		var chances = Array.apply(null, Array(15)).map(function () {});
 
@@ -61,6 +61,7 @@ var runBotSS;
 			});
 
 		var existingPair = 0;
+		var wasOrIsThreeOrMore = false;
 
 		dicesSorted.forEach(function(diceRoll, index) {
 
@@ -70,10 +71,12 @@ var runBotSS;
 
 			if(index === 4) {
 
-				var straightLength = botDecideObject.straight.length,
+				var straightLength = botDecideObject.straight.length;
+
+				console.log(straightLength);
 
 				if(chances[10] !== 'done') {
-					if($.inArray(1, dicesSorted)) {
+					if($.inArray(1, dicesSorted) >= 0) {
 						chances[10] = Math.pow(1/6, 4 - straightLength);
 					} else {
 						chances[10] = Math.pow(1/6, 5 - straightLength);
@@ -81,7 +84,7 @@ var runBotSS;
 				}
 
 				if(chances[11] !== 'done') {
-					if($.inArray(6, dicesSorted)) {
+					if($.inArray(6, dicesSorted) >= 0) {
 						chances[11] = Math.pow(1/6, 4 - straightLength);
 					} else {
 						chances[11] = Math.pow(1/6, 5 - straightLength);
@@ -93,13 +96,22 @@ var runBotSS;
 
 				if(diceRoll === dicesSorted[i]) {
 
+					var numberOfSame = (i - index + 1);
+
+					chances[6] = 1;
+
 					if(diceRoll !== existingPair && existingPair !== 0) {
 						chances[7] = 1;
+						if(wasOrIsThreeOrMore === true) {
+							chances[12] = 1;
+						}
+					} else if(existingPair === 0) {
+						existingPair = diceRoll;
+						if(numberOfSame >= 3) {
+							wasOrIsThreeOrMore = true;
+							chances[6] = 1;
+						}
 					}
-
-					existingPair = diceRoll;
-
-					var numberOfSame = (i - index + 1);
 
 					if(numberOfSame === 5 && chances[14] !== 'done') {
 						chances[14] = 1;
@@ -112,25 +124,23 @@ var runBotSS;
 					if(chances[6] !== 'done') {
 						chances[6] = 1;
 					}
-
-
-
-					/*if(index === 0) {
-						if(chances[14] !== 'done') {
-							chances[14] = 1;
-						} else if(chances[diceRoll-1] !== 'done') {
-							chances[diceRoll-1] = 1;
-						}
-					} else if(index === 1) {
-						//fyrtal
-					} else if(index === 2) {
-						//tretal
-					} else {
-						//par
-					}*/
+				} else {
+					if(chances[6] == false) {
+						chances[6] = 4/6;
+					}
+					if(chances[7] == false) {
+						chances[7] = 4/6*3/6*2/6; //Chance for two pairs
+					}
+					if(chances[8] == false) {
+						chances[8] = 4/6*3/6; //Chance for threeOfAKind
+					}
+					if(chances[9] == false) {
+						chances[9] = 4/6*3/6*2/6*1/6; //Chance for fourOfAKind
+					}
 				}
 			}
 		});
+		console.log(chances);
 	}
 
 	function rollAgain(){
