@@ -74,10 +74,7 @@ var botHumanSwitch;
 			thisPlayerRow.find('input').remove();
 			thisPlayerRow.find('.center-block').append(
 				'<select class="form-control">' +
-					'<option value="Otålige Ove">Otålige Ove</option>' +
-					'<option value="Bodil Bonus">Bodil Bonus</option>' +
-					'<option value="Yatzy Jägarn">Yatzy Jägarn</option>' +
-					'<option value="Sluge Rickard">Sluge Rickard</option>' +
+					'<option value="Dator">Datorspelare</option>' +
 				'</select>'
 			);
 		}
