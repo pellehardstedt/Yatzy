@@ -18,7 +18,6 @@ function startDiceRoll() {
 
 	function rollDicesFunc() {
 		if($('.score-table').find('td').hasClass('filled-in')) {
-			alert("Please submit score or remove the marked area in the score table!");
 			return;
 		}	else if (rollNumber > 1) {
 			rollAllDices();
