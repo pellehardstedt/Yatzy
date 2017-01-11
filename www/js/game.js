@@ -155,10 +155,6 @@ var results,
 			'</div>'
 		);
 
-		$('.player-form').find('input').each(function(){
-			console.log($(this).val(''));
-		});
-
 		$('#inGameMeny .close' ).trigger( "click" );
 		$('.start-menu-wrapper').show();
 		$('.game-screen-wrapper').hide();
