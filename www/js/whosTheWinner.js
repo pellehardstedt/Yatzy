@@ -22,6 +22,9 @@ function storeScore(){
     playersSorted.forEach(function(playerActive, i){
       //variable for checking if the current player is placed
       var playerPlaced = false;
+      if(playerActive.bot === true){
+        playerPlaced = true;
+      }
       //if the parsed (stored) highscore is not empty
       if(parsedHighscore !== null){
           //check with each highscore-position
@@ -45,7 +48,9 @@ function storeScore(){
         highscore = parsedHighscore;
       }
       else {
-        highscore.push(playerActive);
+        if(playerActive.bot === false){
+          highscore.push(playerActive);
+        }
       }
     });
     //stringify parsedHighscore to update the localStorage-highscore
