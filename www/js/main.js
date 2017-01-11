@@ -56,27 +56,32 @@ $(function(){
 	$('.score-table').on('click', 'td', function(event){
 		var thisTd = $(this);
 
-		//Send the td clicked to the clickTd function
-		clickTd(thisTd);
+		if( thisTd.hasClass('no-preview') ){
 
-		if( thisTd.hasClass('player-' + activePlayer.playerNo) && rollNumber < 3 ){
-
-			//coordinates
-			xPos = event.pageX;
-			yPos = event.pageY;
-
-			//
-			if(xPos > 260){
-				xPos = xPos - 100;
-			}
-
-			//position and show the confirm tooltip
-			$('.confirm-tooltip').css( {"top" : yPos, "left" : xPos} );
-			$('.confirm-tooltip').show();
 		}
+		else{
+			//Send the td clicked to the clickTd function
+			clickTd(thisTd);
 
+			if( thisTd.hasClass('player-' + activePlayer.playerNo) && rollNumber < 3 ){
+
+				//coordinates
+				xPos = event.pageX;
+				yPos = event.pageY;
+
+				// If x is to large. Decrease it so tooltip is properly displayed. 
+				if(xPos > 260){
+					xPos = xPos - 100;
+				}
+
+				//position and show the confirm tooltip
+				$('.confirm-tooltip').css( {"top" : yPos, "left" : xPos} );
+				$('.confirm-tooltip').show();
+			}
+		}
 	});
 
+	// confirm the selection if user clicks on the "JA" button
 	$('.confirm-tooltip').on('click', '.btn-success', function(){
 		if($('.score-table .filled-in').length) {
 			submitScore();
@@ -84,6 +89,7 @@ $(function(){
 		}
 	});
 
+	// take back the selection if user clicks on "NEJ" button
 	$('.confirm-tooltip').on('click', '.btn-danger', function(){
 		$('.score-table .filled-in').removeClass('filled-in');
 		$('.confirm-tooltip').hide();
