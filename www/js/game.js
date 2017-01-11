@@ -172,6 +172,9 @@ var results,
 
 		//Reset a lot of gamesettings
 		totalClearOfAll();
+
+		//hide the submit-tooltip if it is visible. 
+		$('.confirm-tooltip').hide();
 	}
 
 	nextPlayer = nextPlayerFunc;
