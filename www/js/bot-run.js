@@ -20,7 +20,7 @@ function runBot(botPersonality) {
 
 	//hand over analysis to the correct bot-personality.
 	switch(botPersonality){
-		case "Otålige Ove":
+		case "Dator":
 			runBotOO();
 			break;
 		case "Strategiska Sten":
