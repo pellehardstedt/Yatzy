@@ -1,3 +1,4 @@
+//global array
 var playersSorted = [];
 
 //input player array

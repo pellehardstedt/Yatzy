@@ -2,11 +2,13 @@
 var theDiceRolls = [];
 
 //How manny rolls the player has left (3-0)
-var rollNumber = 3,
-		rollDices,
-		clearDices,
-		lockDices,
-		totalClearOfAll;
+var rollNumber = 3;
+
+//Global vars holding functions
+var rollDices,
+		clearDices, //Clearing the locks on the dices
+		lockDices, //Locks the dice that you send to this function
+		totalClearOfAll; //Resets everything (locks, dices, round, rollNumber)
 
 $(startDiceRoll());
 

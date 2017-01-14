@@ -1,9 +1,9 @@
 //finds the highest value in an array and returns that value with its index contained in an object
 function findMax(resultsArray){
-	var max = 0;
-	var indexOfMax = 0;
-	var length = resultsArray.length;
-	var returnObj = {};
+	var max = 0,
+			indexOfMax = 0,
+			length = resultsArray.length,
+			returnObj = {};
 
 	for(var i = 0; i <= length-1; i++){
 		if(resultsArray[i] > max){
@@ -21,9 +21,9 @@ function findMax(resultsArray){
 //finds the highest value that is not allready filled in by the active player. Returns a td jquery object.
 //if max is 0 it returns the 
 function findMaxOfAvailable(resultsArray){
-	var greenLight = false;
-	var bestResultObj;
-	var index,
+	var greenLight = false,
+		bestResultObj,
+		index,
 		result,
 		tableIndex;
 

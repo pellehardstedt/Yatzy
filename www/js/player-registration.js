@@ -3,9 +3,9 @@
 //adding and removing rows and the functionality around this. 
 
 // Globals
-var addNewPlayer;
-var removePlayer;
-var botHumanSwitch;
+var addNewPlayer,
+		removePlayer,
+		botHumanSwitch;
 
 //Self executing function
 (function(){

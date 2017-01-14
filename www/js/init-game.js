@@ -6,7 +6,7 @@ var startNewGame;
 
 // Global vars
 var players = [],
-	activePlayer;
+		activePlayer;
 
 // Self executing function 
 (function(){
