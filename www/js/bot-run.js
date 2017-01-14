@@ -23,9 +23,6 @@ function runBot(botPersonality) {
 		case "Dator":
 			runBotOO();
 			break;
-		case "Strategiska Sten":
-			runBotSS();
-			break;
 	}
 }
 

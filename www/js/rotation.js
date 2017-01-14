@@ -12,6 +12,4 @@ function preventLandscape(){
         $('body > *').show();
         $('.rotate-mess').remove();
     }
-
-    //$('body').attr('style', 'margin-top:50%;transform: rotate(' + degrees + 'deg)');
 }
